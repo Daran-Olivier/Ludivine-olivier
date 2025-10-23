@@ -1,0 +1,73 @@
+/* Styles communs pour les pages produit */
+:root{
+  --text:#222;
+  --muted:#555;
+  --primary:#4A90E2;
+  --secondary:#6c5ce7;
+  --accent:#00b894;
+  --warning:#fdcb6e;
+  --info:#74b9ff;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --border:#e6e9ef;
+}
+
+body{color:var(--text);background:linear-gradient(135deg, #e3eafc 80%, #f8f9fa 100%);} 
+
+.product-template{max-width:1000px;margin:2rem auto;padding:2rem;background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.06);} 
+.product-header h2{margin:0 0 .5rem;font-size:2rem;color:var(--primary);} 
+.product-header .subtitle{color:var(--muted);font-size:1.1rem;} 
+
+/* Sections avec couleurs distinctes */
+.product-description h3,
+.product-benefits-block h3{color:#00b894;margin:1.5rem 0 1rem;font-size:1.5rem;border-bottom:3px solid #00b894;padding-bottom:0.5rem;}
+
+.product-usage h3,
+.product-usage h4{color:#6c5ce7;margin:1.5rem 0 1rem;font-size:1.3rem;}
+
+.product-quality h3,
+.product-science h3,
+.product-science h4{color:#0984e3;margin:1.5rem 0 1rem;font-size:1.3rem;}
+
+.product-ingredients h4{color:#d63031;margin:1.5rem 0 1rem;font-size:1.2rem;}
+
+.product-precautions h4{color:#e17055;margin:1.5rem 0 1rem;font-size:1.2rem;background:#fff5f2;padding:0.5rem 1rem;border-left:4px solid #e17055;border-radius:4px;}
+
+.product-ayurveda h3{color:#6c5ce7;margin:1.5rem 0 1rem;font-size:1.3rem;border-bottom:2px solid #a29bfe;padding-bottom:0.5rem;}
+
+.product-nutrition h4{color:#2d3436;margin:1.5rem 0 1rem;font-size:1.2rem;background:#f8f9fa;padding:0.5rem 1rem;border-left:4px solid #74b9ff;border-radius:4px;}
+
+/* Listes et contenus */
+.product-description ul,
+.product-usage ul,
+.product-benefits-block ul,
+.product-quality ul,
+.product-ayurveda ul{margin:0 0 1rem 1.25rem;}
+
+.product-description li,
+.product-usage li,
+.product-benefits-block li{margin:.5rem 0;line-height:1.6;}
+
+.product-benefits-block ul li::marker{color:#00b894;}
+.product-usage ul li::marker{color:#6c5ce7;}
+.product-ayurveda ul li::marker{color:#a29bfe;}
+
+/* Texte en gras coloré */
+.product-description strong{color:#0984e3;}
+.product-benefits-block strong{color:#00b894;}
+.product-usage strong{color:#6c5ce7;}
+.product-science strong{color:#0984e3;}
+.product-precautions strong{color:#d63031;}
+
+.product-nutrition table{width:100%;border-collapse:collapse;margin-top:.5rem;font-size:.95rem;}
+.product-nutrition th,
+.product-nutrition td{border:1px solid var(--border);padding:.5rem .6rem;text-align:left;}
+.product-nutrition thead th{background:#dfe6e9;color:#2d3436;font-weight:600;}
+.product-nutrition tbody tr:nth-child(even){background:#f8f9fa;}
+.product-nutrition tbody tr:hover{background:#e3f2fd;}
+
+/* Responsive */
+@media (max-width: 768px){
+  .product-template{padding:1.25rem;border-radius:12px;}
+  .product-header h2{font-size:1.6rem;}
+}

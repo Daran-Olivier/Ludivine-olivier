@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../tp-frontendAO-espacecréation"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "tp-frontendAO-espacecréation"
+	}
+}

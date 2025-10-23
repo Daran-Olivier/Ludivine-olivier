@@ -1,0 +1,65 @@
+/* ========================================
+   Styles spécifiques pour contact.html
+   ======================================== */
+
+/* Animations pour le formulaire */
+@keyframes pop-in {
+    0% {transform:scale(0.7);opacity:0;}
+    80% {transform:scale(1.05);opacity:1;}
+    100% {transform:scale(1);}
+}
+
+.btn.pulse:hover {
+    transform:scale(1.07);
+    box-shadow:0 4px 16px #ff7eb9;
+}
+
+input:focus, textarea:focus {
+    outline:2px solid #ff7eb9;
+    background:#f7c6ff33;
+}
+
+/* Styles pour le formulaire de contact */
+#contactForm {
+    background:#fff;
+    padding:2rem;
+    border-radius:2rem;
+    box-shadow:0 2px 16px #e3eafc;
+    display:flex;
+    flex-direction:column;
+    gap:1.2rem;
+    animation:pop-in 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+#confirmation-block {
+    margin-top:2rem;
+    background:#e3eafc;
+    border-radius:1.5rem;
+    padding:1.5rem;
+    box-shadow:0 2px 12px #c6eaff;
+}
+
+.confirmation-icon {
+    font-size:2.5rem;
+    color:#2ECC71;
+    margin-bottom:1rem;
+}
+
+/* Styles pour la section FAQ */
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.faq-question:hover h4 {
+    opacity: 0.8;
+}
+
+.faq-answer.active {
+    max-height: 500px !important;
+    padding-top: 1rem !important;
+}
+
+.faq-question.active .fa-chevron-down {
+    transform: rotate(180deg);
+}

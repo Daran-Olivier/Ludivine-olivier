@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Programmes - Ludivine & Olivier</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    <link rel="stylesheet" href="cookie-consent.css">
+
+</head>
+<body style="color:#222; background: linear-gradient(135deg, #e3eafc 80%, #f8f9fa 100%); margin: 0; padding: 0;">
+	<header class="header">
+		<nav class="navbar">
+			<div class="nav-brand">
+				<span class="brand-text">Ludivine & Olivier</span>
+				<img src="assets/Charte décomposée PNG/PLBleu(fondTransparent).png" alt="PureLink Logo" class="logo">
+			</div>
+			<ul class="nav-menu">
+				<li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+				<li class="nav-item"><a href="a-propos.html" class="nav-link"><i class="fas fa-users"></i> À propos</a></li>
+				<li class="nav-item dropdown">
+					<a href="produits.html" class="nav-link">
+						<i class="fas fa-shopping-bag"></i> Produits
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="produits.html#nutrition"><i class="fas fa-apple-alt"></i> Nutrition</a></li>
+						<li><a href="produits.html#care"><i class="fas fa-heart"></i> Care</a></li>
+						<li><a href="produits.html#drinks"><i class="fas fa-coffee"></i> Drinks</a></li>
+						<li><a href="produits.html#elixirs"><i class="fas fa-magic"></i> Elixirs</a></li>
+					</ul>
+				</li>
+				<li class="nav-item"><a href="programmes.html" class="nav-link active"><i class="fas fa-download"></i> Programmes</a></li>
+				<li class="nav-item"><a href="affiliation.html" class="nav-link"><i class="fas fa-handshake"></i> Affiliation</a></li>
+                <li class="nav-item"><a href="questionnaire.html" class="nav-link"><i class="fas fa-clipboard-check"></i> Questionnaire</a></li>
+                <li class="nav-item"><a href="avis.html" class="nav-link"><i class="fas fa-comments"></i> Avis</a></li>
+				<li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+			</ul>
+			<div class="hamburger">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</div>
+		</nav>
+	</header>
+
+	<main style="padding-top:2rem;">
+	<h1 class="hero-title" style="text-align:center; color:#4A90E2;">Découvre <span class="highlight">ton programme</span> personnalisé !</h1>
+		<p class="hero-subtitle" style="text-align:center; color:#2d3436;">Télécharge le programme qui te correspond et commence ton aventure santé avec Ludivine & Olivier.</p>
+		<style>
+			.program-card::before { display: none !important; }
+			.program-emoji { 
+				font-size: 3rem; 
+				position: absolute; 
+				top: -20px; 
+				right: 20px; 
+				padding: 10px; 
+				border-radius: 50%; 
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+			}
+		</style>
+		<section class="programs-grid" style="max-width:700px;margin:auto;display:flex;flex-direction:column;gap:2.5rem;padding:2rem 1rem;">
+			<div class="program-card" style="background:white;padding:2rem;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1);border:2px solid #9B59B6;transition:transform 0.3s ease,box-shadow 0.3s ease;position:relative;">
+				<span class="program-emoji" style="background:#9B59B6;">👴👵</span>
+				<h2 style="color:#9B59B6;">Programme Séniors</h2>
+				<p>Un programme adapté pour les séniors, axé sur la mobilité, la douceur et le bien-être.<br>Idéal pour rester actif et en forme à tout âge.</p>
+				<a href="assets/séniors.pdf" class="btn btn-primary pulse" download><i class="fas fa-file-download"></i> Télécharger le PDF</a>
+			</div>
+			<div class="program-card" style="background:white;padding:2rem;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1);border:2px solid #F39C12;transition:transform 0.3s ease,box-shadow 0.3s ease;position:relative;">
+				<span class="program-emoji" style="background:#F39C12;">🤸‍♂️</span>
+				<h2 style="color:#F39C12;">Programme Sport</h2>
+				<p>Un programme sportif complet pour améliorer ta condition physique, ton endurance et ta force.<br>Convient à tous les niveaux.</p>
+				<a href="assets/sport.pdf" class="btn btn-primary pulse" download><i class="fas fa-file-download"></i> Télécharger le PDF</a>
+			</div>
+			<div class="program-card" style="background:white;padding:2rem;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1);border:2px solid #2ECC71;transition:transform 0.3s ease,box-shadow 0.3s ease;position:relative;">
+				<span class="program-emoji" style="background:#2ECC71;">🧘‍♀️</span>
+				<h2 style="color:#2ECC71;">Programme Bodyfit</h2>
+				<p>Un programme orienté musculation et fitness pour sculpter ton corps et gagner en puissance.<br>Parfait pour les passionnés de bodyfit.</p>
+				<a href="assets/bodyfit.pdf" class="btn btn-primary pulse" download><i class="fas fa-file-download"></i> Télécharger le PDF</a>
+			</div>
+			<div class="program-card" style="background:white;padding:2rem;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1);border:2px solid #E67E22;transition:transform 0.3s ease,box-shadow 0.3s ease;position:relative;">
+				<span class="program-emoji" style="background:#E67E22;">🚀</span>
+				<h2 style="color:#E67E22;">Programme Actifs</h2>
+				<p>Un programme dynamique pour les personnes actives, combinant cardio, renforcement et bien-être.<br>Pour garder la forme toute l’année !</p>
+				<a href="assets/actifs.pdf" class="btn btn-primary pulse" download><i class="fas fa-file-download"></i> Télécharger le PDF</a>
+			</div>
+		</section>
+	</main>
+
+	<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="assets/Charte décomposée PNG/PLBlanc(fondTransparent).png" alt="PureLink Logo" class="footer-logo">
+                        <h3 class="highlight">Ludivine & Olivier</h3>
+                    </div>
+                    <p>Votre partenaire de confiance pour une vie plus saine et équilibrée.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/people/Ludivine-Olivier/61573924110352/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ludivine.olivier.pureliink/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ludivine-et-olivier" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.tiktok.com/@ludivine.olivier8" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="produits.html">Produits</a></li>
+                        <li><a href="programmes.html">Programmes</a></li>
+                        <li><a href="affiliation.html">Affiliation</a></li>
+                        <li><a href="questionnaire.html">Questionnaire</a></li>
+                        <li><a href="avis.html">Avis</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="conditions-utilisation.html">Conditions d'utilisation</a></li>
+                        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                        <li><a href="contact.html">Support client</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Restez informé de nos dernières nouveautés et offres spéciales.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ludivine & Olivier - PureLink. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+	<!-- Scripts -->
+	<script src="script.js"></script>    <script src="form-handler.js"></script>    <script src="cookie-consent.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+

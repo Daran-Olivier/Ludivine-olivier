@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Analytics - Ludivine & Olivier</title>
+    <link rel="icon" type="image/png" href="assets/Charte décomposée PNG/PLflavicon-carréBleu(fondTransparent).png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            color: #1f2937;
+            font-size: 2rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #1f2937;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-icon.views {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .stat-icon.sessions {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+
+        .stat-icon.pages {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+        }
+
+        .stat-icon.events {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            color: white;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #6b7280;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .chart-header {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chart-header h2 {
+            color: #1f2937;
+            font-size: 1.5rem;
+        }
+
+        .page-list {
+            list-style: none;
+        }
+
+        .page-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            transition: background 0.3s ease;
+        }
+
+        .page-item:hover {
+            background: #f9fafb;
+        }
+
+        .page-item:last-child {
+            border-bottom: none;
+        }
+
+        .page-name {
+            color: #1f2937;
+            font-weight: 500;
+        }
+
+        .page-views {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .view-count {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            width: 150px;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .time-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .time-item {
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .time-page {
+            color: #1f2937;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .time-duration {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #6b7280;
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-actions {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-bar {
+                width: 100px;
+            }
+        }
+
+        .refresh-notice {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="header">
+            <h1>📊 Dashboard Analytics</h1>
+            <div class="header-actions">
+                <button class="btn btn-primary" onclick="refreshStats()">
+                    <i class="fas fa-sync-alt"></i> Actualiser
+                </button>
+                <button class="btn btn-secondary" onclick="exportStats()">
+                    <i class="fas fa-download"></i> Exporter
+                </button>
+                <button class="btn btn-secondary" onclick="clearStats()">
+                    <i class="fas fa-trash"></i> Réinitialiser
+                </button>
+            </div>
+        </div>
+
+        <div class="refresh-notice">
+            <i class="fas fa-info-circle"></i>
+            <span><strong>Note :</strong> Les statistiques sont locales et basées sur ce navigateur uniquement. Pour un suivi complet de tous les visiteurs, utilisez Google Analytics.</span>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon views">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="stat-value" id="totalViews">0</div>
+                <div class="stat-label">Pages vues au total</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon sessions">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-value" id="totalSessions">0</div>
+                <div class="stat-label">Sessions uniques</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon pages">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="stat-value" id="uniquePages">0</div>
+                <div class="stat-label">Pages différentes visitées</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon events">
+                    <i class="fas fa-mouse-pointer"></i>
+                </div>
+                <div class="stat-value" id="totalEvents">0</div>
+                <div class="stat-label">Événements enregistrés</div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-header">
+                <h2>📈 Pages les plus visitées</h2>
+            </div>
+            <ul class="page-list" id="topPages">
+                <li class="empty-state">
+                    <i class="fas fa-chart-bar"></i>
+                    <p>Aucune donnée disponible</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-header">
+                <h2>⏱️ Temps passé par page</h2>
+            </div>
+            <div class="time-stats" id="timeStats">
+                <div class="empty-state">
+                    <i class="fas fa-clock"></i>
+                    <p>Aucune donnée disponible</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="analytics.js"></script>
+    <script>
+        function refreshStats() {
+            loadStats();
+        }
+
+        function exportStats() {
+            if (window.siteAnalytics) {
+                window.siteAnalytics.exportStats();
+            }
+        }
+
+        function clearStats() {
+            if (window.siteAnalytics) {
+                if (window.siteAnalytics.clearStats()) {
+                    loadStats();
+                }
+            }
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return minutes > 0 ? `${minutes}min ${secs}s` : `${secs}s`;
+        }
+
+        function loadStats() {
+            const analytics = localStorage.getItem('purelink_analytics');
+            
+            if (!analytics) {
+                console.log('Aucune donnée analytics disponible');
+                return;
+            }
+
+            const data = JSON.parse(analytics);
+
+            // Statistiques générales
+            document.getElementById('totalViews').textContent = data.totalViews || 0;
+            document.getElementById('totalSessions').textContent = data.totalSessions || 0;
+            document.getElementById('uniquePages').textContent = Object.keys(data.pageViews || {}).length;
+            document.getElementById('totalEvents').textContent = (data.events || []).length;
+
+            // Pages les plus visitées
+            const topPagesContainer = document.getElementById('topPages');
+            const pageViews = data.pageViews || {};
+            const sortedPages = Object.entries(pageViews)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 10);
+
+            if (sortedPages.length > 0) {
+                const maxViews = sortedPages[0][1];
+                topPagesContainer.innerHTML = sortedPages.map(([page, views]) => {
+                    const percentage = (views / maxViews) * 100;
+                    return `
+                        <li class="page-item">
+                            <span class="page-name">${page}</span>
+                            <div class="page-views">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: ${percentage}%"></div>
+                                </div>
+                                <span class="view-count">${views} vues</span>
+                            </div>
+                        </li>
+                    `;
+                }).join('');
+            }
+
+            // Temps passé par page
+            const timeStatsContainer = document.getElementById('timeStats');
+            const timeOnPage = data.timeOnPage || {};
+            const sortedTime = Object.entries(timeOnPage)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 8);
+
+            if (sortedTime.length > 0) {
+                timeStatsContainer.innerHTML = sortedTime.map(([page, seconds]) => `
+                    <div class="time-item">
+                        <div class="time-page">${page}</div>
+                        <div class="time-duration">
+                            <i class="fas fa-clock"></i> ${formatTime(seconds)}
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Charger les stats au chargement de la page
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(loadStats, 500);
+        });
+
+        // Rafraîchir toutes les 30 secondes
+        setInterval(loadStats, 30000);
+    </script>
+</body>
+</html>

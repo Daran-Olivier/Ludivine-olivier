@@ -1,0 +1,28 @@
+{
+  // Général
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "files.eol": "\n",
+
+  // PHP (Intelephense)
+  "intelephense.environment.phpVersion": "7.4",
+  "intelephense.telemetry.enabled": false,
+  "intelephense.files.maxSize": 2000000,
+
+  // Validation PHP (utilise php.exe local si configuré dans PATH)
+  "php.validate.enable": true,
+
+  // Front (facultatif)
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

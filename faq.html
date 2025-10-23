@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Questions Fréquentes - Ludivine & Olivier</title>
+    <link rel="icon" type="image/png" href="assets/Charte décomposée PNG/PLflavicon-carréBleu(fondTransparent).png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e3eafc 80%, #f8f9fa 100%);
+            margin: 0;
+            padding: 0;
+        }
+        .faq-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .faq-header h1 {
+            color: #4A90E2;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .faq-header p {
+            color: #2d3436;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .faq-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .faq-section h3 {
+            color: #9B59B6;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #9B59B6;
+        }
+        details {
+            margin-bottom: 1rem;
+            border: 2px solid #e3eafc;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        details:hover {
+            border-color: #4A90E2;
+            box-shadow: 0 2px 10px rgba(74, 144, 226, 0.2);
+        }
+        details[open] {
+            border-color: #2ECC71;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+        }
+        summary {
+            cursor: pointer;
+            padding: 1.2rem 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e3eafc 100%);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #2d3436;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        summary:hover {
+            background: linear-gradient(135deg, #e3eafc 0%, #d5dff7 100%);
+            color: #4A90E2;
+        }
+        summary::before {
+            content: "➕";
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            color: #4A90E2;
+            transition: transform 0.3s ease;
+        }
+        details[open] summary::before {
+            content: "➖";
+            color: #2ECC71;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        details > div {
+            padding: 1.5rem;
+            background: white;
+            color: #2d3436;
+            line-height: 1.8;
+        }
+        details ul, details ol {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        details li {
+            margin-bottom: 0.5rem;
+        }
+        details strong {
+            color: #4A90E2;
+        }
+        details em {
+            color: #9B59B6;
+            font-style: italic;
+        }
+        .contact-cta {
+            background: linear-gradient(135deg, #4A90E2 0%, #9B59B6 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 6px 25px rgba(74, 144, 226, 0.3);
+        }
+        .contact-cta h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .contact-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+        .contact-cta .btn {
+            background: white;
+            color: #4A90E2;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .contact-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: #f8f9fa;
+        }
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .quick-link-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .quick-link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+            border-color: #4A90E2;
+        }
+        .quick-link-card.active {
+            border-color: #2ECC71;
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%);
+        }
+        .quick-link-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .quick-link-card h4 {
+            color: #2d3436;
+            margin-bottom: 0.5rem;
+        }
+        .quick-link-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .icon-products { color: #2ECC71; }
+        .icon-wellness { color: #F39C12; }
+        .icon-affiliation { color: #9B59B6; }
+        .icon-delivery { color: #E67E22; }
+        .faq-section {
+            display: none;
+        }
+        .faq-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .faq-header h1 {
+                font-size: 2rem;
+            }
+            .faq-section {
+                padding: 1.5rem;
+            }
+            .faq-section h3 {
+                font-size: 1.5rem;
+            }
+            summary {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+        }
+    </style>    <link rel="stylesheet" href="cookie-consent.css">
+
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <span class="brand-text">Ludivine & Olivier</span>
+                <img src="assets/Charte décomposée PNG/PLBleu(fondTransparent).png" alt="PureLink Logo" class="logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+                <li class="nav-item dropdown">
+                    <a href="produits.html" class="nav-link">
+                        <i class="fas fa-shopping-bag"></i> Produits
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="produits.html#nutrition"><i class="fas fa-apple-alt"></i> Nutrition</a></li>
+                        <li><a href="produits.html#care"><i class="fas fa-heart"></i> Care</a></li>
+                        <li><a href="produits.html#drinks"><i class="fas fa-coffee"></i> Drinks</a></li>
+                        <li><a href="produits.html#elixirs"><i class="fas fa-magic"></i> Elixirs</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="programmes.html" class="nav-link"><i class="fas fa-download"></i> Programmes</a></li>
+                <li class="nav-item"><a href="affiliation.html" class="nav-link"><i class="fas fa-handshake"></i> Affiliation</a></li>
+                <li class="nav-item"><a href="a-propos.html" class="nav-link"><i class="fas fa-users"></i> À propos</a></li>
+                <li class="nav-item"><a href="questionnaire.html" class="nav-link"><i class="fas fa-clipboard-check"></i> Questionnaire</a></li>
+                <li class="nav-item"><a href="avis.html" class="nav-link"><i class="fas fa-comments"></i> Avis</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="faq-container">
+            <!-- En-tête FAQ -->
+            <div class="faq-header">
+                <h1>💬 FAQ PureLiink</h1>
+                <p>Bienvenue dans la Foire Aux Questions PureLiink — découvrez tout sur nos produits, notre philosophie du bien-être et notre affiliation nouvelle génération.</p>
+            </div>
+
+            <!-- Liens Rapides -->
+            <div class="quick-links">
+                <div class="quick-link-card" onclick="showSection('products')" style="cursor: pointer;">
+                    <i class="fas fa-leaf icon-products"></i>
+                    <h4>Produits</h4>
+                    <p>Découvrez nos formules naturelles fabriquées en France</p>
+                </div>
+                <div class="quick-link-card" onclick="showSection('wellness')" style="cursor: pointer;">
+                    <i class="fas fa-heart icon-wellness"></i>
+                    <h4>Bien-être</h4>
+                    <p>Conseils d'utilisation et combinaisons de produits</p>
+                </div>
+                <div class="quick-link-card" onclick="showSection('affiliation')" style="cursor: pointer;">
+                    <i class="fas fa-handshake icon-affiliation"></i>
+                    <h4>Affiliation</h4>
+                    <p>Rejoignez notre réseau d'entrepreneurs du bien-être</p>
+                </div>
+                <div class="quick-link-card" onclick="showSection('delivery')" style="cursor: pointer;">
+                    <i class="fas fa-shipping-fast icon-delivery"></i>
+                    <h4>Livraison</h4>
+                    <p>Commandes, délais et garanties produits</p>
+                </div>
+            </div>
+
+            <!-- SECTION 1 : PRODUITS PURELIINK -->
+            <div class="faq-section" id="products-section">
+                <h3>🌿 À propos des Produits PureLiink</h3>
+
+                <details>
+                    <summary>Où sont fabriqués les produits PureLiink ?</summary>
+                    <div>
+                        <p>Tous nos produits sont conçus, formulés et fabriqués en <strong>France 🇫🇷</strong> dans des laboratoires certifiés, respectant les plus hauts standards de qualité et de traçabilité.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Les produits PureLiink sont-ils naturels ?</summary>
+                    <div>
+                        <p>Oui, <strong>100 % naturels et clean</strong>. Nos formules sont composées d'ingrédients nobles et efficaces, sans colorants ni conservateurs controversés.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Quels sont les produits phares de la gamme ?</summary>
+                    <div>
+                        <ul>
+                            <li><strong>Cool & Relax</strong> – Réduction du stress et sérénité.</li>
+                            <li><strong>Go To Sleep</strong> – Sommeil profond et réparateur.</li>
+                            <li><strong>Energy Boost</strong> – Énergie naturelle et vitalité.</li>
+                            <li><strong>Collagen</strong> – Beauté de la peau et confort articulaire.</li>
+                            <li><strong>Essential</strong> – Substitut de repas équilibré et gourmand.</li>
+                            <li><strong>Easy Digest</strong> – Digestion fluide et confort intestinal.</li>
+                            <li><strong>Détox</strong> – Purification et élimination des toxines.</li>
+                            <li><strong>Immunity</strong> – Renforcement des défenses immunitaires.</li>
+                            <li><strong>Love Energy</strong> – Vitalité et bien-être au quotidien.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Les produits conviennent-ils à tout le monde ?</summary>
+                    <div>
+                        <p>Les produits s'adressent aux adultes. Certaines formules sont déconseillées aux femmes enceintes, allaitantes ou aux enfants — reportez-vous toujours aux <strong>précautions d'usage</strong> indiquées sur chaque produit.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Quelle est la durée idéale d'une cure ?</summary>
+                    <div>
+                        <p>Les programmes durent entre <strong>15 et 30 jours</strong> selon les besoins. Une utilisation régulière optimise les bienfaits naturels des formules.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Les produits sont-ils testés scientifiquement ?</summary>
+                    <div>
+                        <p><strong>Oui ✅</strong> Chaque formule repose sur des études cliniques et des actifs brevetés, comme le <strong>Robuvit®</strong> ou le <strong>complexe enzymatique d'Essential</strong>, garantissant efficacité et sécurité.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Où puis-je acheter les produits PureLiink ?</summary>
+                    <div>
+                        <p>Les produits sont disponibles <strong>exclusivement via notre réseau d'affiliés officiels</strong>. Cela garantit un conseil personnalisé et une expérience client sur mesure.</p>
+                        <p><a href="contact.html" style="color: #4A90E2; font-weight: 600;">Contactez-nous</a> pour être mis en relation avec votre conseiller PureLiink.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- SECTION 2 : BIEN-ÊTRE & UTILISATION -->
+            <div class="faq-section" id="wellness-section">
+                <h3>🌞 Bien-être & Utilisation</h3>
+
+                <details>
+                    <summary>Peut-on combiner plusieurs produits ?</summary>
+                    <div>
+                        <p><strong>Oui !</strong> Les formules sont conçues pour agir en synergie. Par exemple :</p>
+                        <ul>
+                            <li><em>Cool & Relax</em> le soir + <em>Energy Boost</em> le matin = équilibre parfait</li>
+                            <li><em>Easy Digest</em> + <em>Détox</em> = cure detox complète</li>
+                            <li><em>Collagen</em> + <em>Immunity</em> = beauté et défenses renforcées</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Les produits ont-ils bon goût ?</summary>
+                    <div>
+                        <p><strong>Absolument 😋</strong> Nos produits se distinguent par leurs saveurs gourmandes et naturelles (poire-yuzu, agrumes, pamplemousse-jasmin, mangue-yuzu, vanille…). Le plaisir fait partie du bien-être !</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>PureLiink propose-t-il des abonnements ?</summary>
+                    <div>
+                        <p>Oui, nos <strong>abonnements mensuels</strong> permettent de recevoir vos produits préférés avec <strong>5 % de réduction</strong> et des <strong>PureLiink Coins</strong> utilisables pour vos futurs achats.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Les produits conviennent-ils aux sportifs ?</summary>
+                    <div>
+                        <p><strong>Oui 💪</strong> Les gammes <strong>Essential</strong> et <strong>Energy Boost</strong> sont particulièrement adaptées aux besoins des sportifs, coachs et personnes actives.</p>
+                        <p>Le <strong>Collagen</strong> est également idéal pour le confort articulaire et la récupération musculaire.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Comment prendre les produits PureLiink ?</summary>
+                    <div>
+                        <p>Chaque produit a son mode d'emploi spécifique :</p>
+                        <ul>
+                            <li><strong>Elixirs</strong> : À diluer dans de l'eau, à boire le matin ou le soir selon la formule</li>
+                            <li><strong>Essential</strong> : À mélanger avec du lait pour un repas complet</li>
+                            <li><strong>Compléments</strong> : Suivre les dosages indiqués sur l'emballage</li>
+                        </ul>
+                        <p>Pour un conseil personnalisé, <a href="contact.html" style="color: #4A90E2; font-weight: 600;">contactez votre conseiller</a>.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Y a-t-il des contre-indications ?</summary>
+                    <div>
+                        <p>Certains produits sont déconseillés :</p>
+                        <ul>
+                            <li>Aux femmes enceintes ou allaitantes</li>
+                            <li>Aux enfants de moins de 3 ans</li>
+                            <li>Aux personnes sous traitement médical (consulter votre médecin)</li>
+                            <li>En cas d'allergie à l'un des composants</li>
+                        </ul>
+                        <p>Consultez toujours les <strong>précautions d'usage</strong> sur chaque fiche produit.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- SECTION 3 : AFFILIATION PURELIINK -->
+            <div class="faq-section" id="affiliation-section">
+                <h3>💼 Affiliation Nouvelle Génération PureLiink</h3>
+
+                <details>
+                    <summary>Qu'est-ce que l'affiliation PureLiink ?</summary>
+                    <div>
+                        <p>Un <strong>modèle d'entrepreneuriat moderne et humain 💚</strong> Vous recommandez nos produits et êtes rémunéré sur vos ventes, tout en développant votre propre réseau d'affiliés.</p>
+                        <p>C'est une activité <strong>flexible, sans risque et évolutive</strong>.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>En quoi l'affiliation PureLiink est-elle différente ?</summary>
+                    <div>
+                        <p>PureLiink repose sur la <strong>collaboration humaine</strong> et la <strong>solidarité</strong>. Chaque affilié est accompagné par son <strong>binôme PureLiink</strong> et bénéficie d'une <strong>formation continue</strong> et d'outils concrets pour réussir.</p>
+                        <p>Pas de pression commerciale, juste du partage authentique et du conseil de qualité.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Combien peut-on gagner avec PureLiink ?</summary>
+                    <div>
+                        <p>Les affiliés perçoivent :</p>
+                        <ul>
+                            <li><strong>20 % de commissions</strong> dès la première vente</li>
+                            <li>Jusqu'à <strong>25 % dès 500 € de volume personnel (VA)</strong></li>
+                            <li>Des <strong>bonus et primes de réseau</strong> viennent compléter vos revenus</li>
+                            <li>Des <strong>récompenses</strong> pour les objectifs atteints</li>
+                        </ul>
+                        <p>Votre revenu évolue avec votre activité et votre réseau.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Qui m'accompagne dans mes débuts ?</summary>
+                    <div>
+                        <p>Vous êtes accompagné(e) par :</p>
+                        <ul>
+                            <li>Votre <strong>binôme PureLiink</strong> (parrain/marraine)</li>
+                            <li>Un <strong>coach PureLiink</strong> dédié</li>
+                            <li>L'ensemble de la <strong>communauté PureLiink</strong></li>
+                        </ul>
+                        <p>Vous n'êtes <strong>jamais seul(e)</strong> dans votre développement.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>À qui s'adresse l'affiliation PureLiink ?</summary>
+                    <div>
+                        <p>À tous ceux qui veulent <strong>entreprendre avec sens</strong> :</p>
+                        <ul>
+                            <li>Professionnels du bien-être (coachs, nutritionnistes, kinés…)</li>
+                            <li>Salariés cherchant un complément de revenu</li>
+                            <li>Sportifs et influenceurs bien-être</li>
+                            <li>Indépendants et entrepreneurs</li>
+                            <li>Étudiants ou retraités actifs</li>
+                        </ul>
+                        <p><strong>Aucune expérience préalable n'est nécessaire.</strong></p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Comment rejoindre l'aventure PureLiink ?</summary>
+                    <div>
+                        <ol>
+                            <li>Remplissez le <strong><a href="affiliation.html" style="color: #4A90E2;">formulaire de candidature</a></strong> sur notre site.</li>
+                            <li>Un membre de l'équipe ou votre futur binôme vous contacte.</li>
+                            <li>Suivez la courte <strong>formation en ligne</strong> et lancez votre activité sereinement.</li>
+                        </ol>
+                        <p>C'est aussi simple que ça ! 🚀</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Quels outils sont mis à disposition des affiliés ?</summary>
+                    <div>
+                        <ul>
+                            <li><strong>Tableau de bord personnel</strong> pour suivre vos performances</li>
+                            <li><strong>Liens et codes affiliés personnalisés</strong></li>
+                            <li><strong>Kit marketing et visuels professionnels</strong></li>
+                            <li><strong>Vidéos de formation</strong> et d'aide à la vente</li>
+                            <li><strong>Suivi en temps réel</strong> de vos ventes et commissions</li>
+                            <li><strong>Fiches produits</strong> et argumentaires de vente</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Quels sont les avantages concrets du modèle PureLiink ?</summary>
+                    <div>
+                        <ul>
+                            <li><strong>Revenu évolutif et durable</strong></li>
+                            <li><strong>Liberté d'organisation totale</strong> (travaillez d'où vous voulez, quand vous voulez)</li>
+                            <li><strong>Formation continue offerte</strong></li>
+                            <li><strong>Accompagnement humain et personnalisé</strong></li>
+                            <li><strong>Produits français, naturels et premium</strong></li>
+                            <li><strong>Communauté bienveillante et solidaire</strong></li>
+                            <li><strong>Activité avec du sens</strong> (vous aidez les gens à prendre soin d'eux)</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Peut-on cumuler l'affiliation avec un emploi salarié ?</summary>
+                    <div>
+                        <p><strong>Absolument ! 🎯</strong> L'affiliation PureLiink est conçue pour s'adapter à votre vie. De nombreux affiliés la pratiquent en complément d'une activité salariée.</p>
+                        <p>Vous gérez votre temps comme vous le souhaitez : quelques heures par semaine suffisent pour débuter.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- SECTION 4 : LIVRAISON & COMMANDE -->
+            <div class="faq-section" id="delivery-section">
+                <h3>📦 Livraison & Commande</h3>
+
+                <details>
+                    <summary>Comment passer commande ?</summary>
+                    <div>
+                        <p>Pour commander, contactez directement votre <strong>conseiller PureLiink</strong> qui vous guidera dans votre choix et gérera votre commande.</p>
+                        <p>Vous n'avez pas encore de conseiller ? <a href="contact.html" style="color: #4A90E2; font-weight: 600;">Contactez-nous</a> et nous vous mettrons en relation.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Quels sont les délais de livraison ?</summary>
+                    <div>
+                        <p>Les commandes sont généralement <strong>expédiées sous 48h</strong> et livrées en <strong>3 à 5 jours ouvrés</strong> en France métropolitaine.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Puis-je retourner un produit ?</summary>
+                    <div>
+                        <p>Oui, conformément au <strong>droit de rétractation de 14 jours</strong>, vous pouvez retourner un produit non ouvert.</p>
+                        <p>Pour plus d'informations, consultez nos <a href="conditions-utilisation.html" style="color: #4A90E2; font-weight: 600;">Conditions d'Utilisation</a>.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Les produits sont-ils garantis ?</summary>
+                    <div>
+                        <p><strong>Oui</strong>, tous nos produits sont garantis conformes à leur description. En cas de problème, contactez votre conseiller ou notre <a href="contact.html" style="color: #4A90E2; font-weight: 600;">service client</a>.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Call-to-Action Contact -->
+            <div class="contact-cta">
+                <h3>❓ Vous avez une autre question ?</h3>
+                <p>Notre équipe est là pour vous répondre et vous accompagner dans votre parcours bien-être ou entrepreneurial.</p>
+                <a href="contact.html" class="btn">
+                    <i class="fas fa-envelope"></i>
+                    Posez votre question
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="assets/Charte décomposée PNG/PLBlanc(fondTransparent).png" alt="PureLink Logo" class="footer-logo">
+                        <h3 class="highlight">Ludivine & Olivier</h3>
+                    </div>
+                    <p>Votre partenaire de confiance pour une vie plus saine et équilibrée.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/people/Ludivine-Olivier/61573924110352/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ludivine.olivier.pureliink/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ludivine-et-olivier" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.tiktok.com/@ludivine.olivier8" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="produits.html">Produits</a></li>
+                        <li><a href="programmes.html">Programmes</a></li>
+                        <li><a href="affiliation.html">Affiliation</a></li>
+                        <li><a href="questionnaire.html">Questionnaire</a></li>
+                        <li><a href="avis.html">Avis</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="conditions-utilisation.html">Conditions d'utilisation</a></li>
+                        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                        <li><a href="contact.html">Support client</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Restez informé de nos dernières nouveautés et offres spéciales.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ludivine & Olivier - PureLink. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function showSection(section) {
+            // Retirer la classe active de toutes les sections
+            const allSections = document.querySelectorAll('.faq-section');
+            allSections.forEach(sec => sec.classList.remove('active'));
+            
+            // Retirer la classe active de toutes les cartes
+            const allCards = document.querySelectorAll('.quick-link-card');
+            allCards.forEach(card => card.classList.remove('active'));
+            
+            // Afficher la section correspondante et activer la carte
+            if (section === 'products') {
+                document.getElementById('products-section').classList.add('active');
+                event.currentTarget.classList.add('active');
+                // Scroll vers la section
+                document.getElementById('products-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else if (section === 'wellness') {
+                document.getElementById('wellness-section').classList.add('active');
+                event.currentTarget.classList.add('active');
+                document.getElementById('wellness-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else if (section === 'affiliation') {
+                document.getElementById('affiliation-section').classList.add('active');
+                event.currentTarget.classList.add('active');
+                document.getElementById('affiliation-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else if (section === 'delivery') {
+                document.getElementById('delivery-section').classList.add('active');
+                event.currentTarget.classList.add('active');
+                document.getElementById('delivery-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>    <script src="form-handler.js"></script>    <script src="cookie-consent.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+

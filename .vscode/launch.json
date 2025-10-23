@@ -1,0 +1,13 @@
+{
+  // Remplacez USERNAME par votre identifiant cPanel si vous déboguez sur le serveur
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Écouter Xdebug (PHP)",
+      "type": "php",
+      "request": "launch",
+      "port": 9003,
+      "hostname": "localhost"
+    }
+  ]
+}

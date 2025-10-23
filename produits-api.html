@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Produits - PureLink</title>
+    <link rel="stylesheet" href="produits.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">PureLink</div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html" class="active">Produits</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Nos Produits</h1>
+            <p>Découvrez notre gamme complète de compléments alimentaires naturels</p>
+        </section>
+
+        <section class="filters">
+            <div class="filters-container">
+                <h3>Filtrer par :</h3>
+                <div class="filter-controls">
+                    <select id="category-filter">
+                        <option value="">Toutes les catégories</option>
+                        <option value="poudres">Poudres</option>
+                        <option value="gummies">Gummies</option>
+                        <option value="complements">Compléments</option>
+                        <option value="accessoires">Accessoires</option>
+                    </select>
+                    <select id="featured-filter">
+                        <option value="">Tous les produits</option>
+                        <option value="1">Produits en vedette</option>
+                    </select>
+                    <input type="search" id="search-products" placeholder="Rechercher un produit...">
+                </div>
+            </div>
+        </section>
+
+        <section class="products">
+            <div class="products-container">
+                <!-- Les produits seront chargés ici via l'API -->
+                <div id="products-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>PureLink</h4>
+                <p>Votre partenaire santé et bien-être</p>
+            </div>
+            <div class="footer-section">
+                <h4>Liens rapides</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="produits.html">Produits</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Module API PureLink -->
+    <script src="assets/js/purelink-products.js"></script>
+    <script>
+        // Configuration et initialisation
+        const productsGrid = '#products-grid';
+        const categoryFilter = document.getElementById('category-filter');
+        const featuredFilter = document.getElementById('featured-filter');
+        const searchInput = document.getElementById('search-products');
+
+        // Fonction pour rafraîchir l'affichage
+        async function refreshProducts() {
+            const options = {
+                category: categoryFilter.value || undefined,
+                featured: featuredFilter.value || undefined,
+                q: searchInput.value.trim() || undefined,
+                onError: (error) => {
+                    console.error('Erreur produits:', error);
+                    document.querySelector(productsGrid).innerHTML = 
+                        '<div class="error-message">Impossible de charger les produits. Vérifiez que le backend est déployé.</div>';
+                }
+            };
+            
+            await PureLinkProducts.renderProducts(productsGrid, options);
+        }
+
+        // Écouteurs d'événements
+        categoryFilter.addEventListener('change', refreshProducts);
+        featuredFilter.addEventListener('change', refreshProducts);
+        
+        // Debounce pour la recherche
+        let searchTimeout;
+        searchInput.addEventListener('input', () => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(refreshProducts, 300);
+        });
+
+        // Chargement initial
+        document.addEventListener('DOMContentLoaded', refreshProducts);
+    </script>
+</body>
+</html>

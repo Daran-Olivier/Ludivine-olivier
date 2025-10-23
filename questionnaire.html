@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire Bien-être 360° - Ludivine & Olivier</title>
+    <link rel="icon" type="image/png" href="assets/Charte décomposée PNG/PLflavicon-carréBleu(fondTransparent).png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    <link rel="stylesheet" href="cookie-consent.css">
+
+</head>
+<body style="color:#222; background: linear-gradient(135deg, #e3eafc 80%, #f8f9fa 100%); margin: 0; padding: 0;">
+     <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <span class="brand-text">Ludivine & Olivier</span>
+                <img src="assets/Charte décomposée PNG/PLBleu(fondTransparent).png" alt="PureLink Logo" class="logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+                <li class="nav-item"><a href="a-propos.html" class="nav-link"><i class="fas fa-users"></i> À propos</a></li>
+                <li class="nav-item dropdown">
+                    <a href="produits.html" class="nav-link">
+                        <i class="fas fa-shopping-bag"></i> Produits
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="produits.html#nutrition"><i class="fas fa-apple-alt"></i> Nutrition</a></li>
+                        <li><a href="produits.html#care"><i class="fas fa-heart"></i> Care</a></li>
+                        <li><a href="produits.html#drinks"><i class="fas fa-coffee"></i> Drinks</a></li>
+                        <li><a href="produits.html#elixirs"><i class="fas fa-magic"></i> Elixirs</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="programmes.html" class="nav-link"><i class="fas fa-download"></i> Programmes</a></li>
+                <li class="nav-item"><a href="affiliation.html" class="nav-link"><i class="fas fa-handshake"></i> Affiliation</a></li>
+                <li class="nav-item"><a href="questionnaire.html" class="nav-link active"><i class="fas fa-clipboard-check"></i> Questionnaire</a></li>
+                <li class="nav-item"><a href="avis.html" class="nav-link"><i class="fas fa-comments"></i> Avis</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section Questionnaire Bien-être 360° -->
+    <section class="wellness-quiz" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe); padding: 6rem 0; text-align: center; min-height: 80vh; display: flex; align-items: center; margin-top: 80px;">
+        <div class="container">
+            <div class="quiz-content" style="max-width: 900px; margin: 0 auto; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 3rem; border-radius: 25px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+                <div class="quiz-icon" style="font-size: 5rem; margin-bottom: 1.5rem; animation: floating 3s ease-in-out infinite;">📋</div>
+                <h1 style="color: white; font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 700;">
+                    Questionnaire Bien-être 360°
+                </h1>
+                <p style="color: rgba(255,255,255,0.95); font-size: 1.3rem; line-height: 1.8; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Découvrez votre profil bien-être personnalisé ! Répondez à notre questionnaire complet pour recevoir des recommandations adaptées à vos besoins et objectifs de santé.
+                </p>
+                <div class="quiz-benefits" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 3rem;">
+                    <div class="benefit-item" style="color: white; background: rgba(255, 255, 255, 0.15); padding: 1rem 2rem; border-radius: 15px; transition: transform 0.3s;">
+                        <i class="fas fa-check-circle" style="color: #00b894; font-size: 2rem; margin-bottom: 0.5rem; display: block;"></i>
+                        <span style="font-size: 1.1rem; font-weight: 600;">100% Gratuit</span>
+                    </div>
+                    <div class="benefit-item" style="color: white; background: rgba(255, 255, 255, 0.15); padding: 1rem 2rem; border-radius: 15px; transition: transform 0.3s;">
+                        <i class="fas fa-clock" style="color: #00b894; font-size: 2rem; margin-bottom: 0.5rem; display: block;"></i>
+                        <span style="font-size: 1.1rem; font-weight: 600;">5 minutes chrono</span>
+                    </div>
+                    <div class="benefit-item" style="color: white; background: rgba(255, 255, 255, 0.15); padding: 1rem 2rem; border-radius: 15px; transition: transform 0.3s;">
+                        <i class="fas fa-user-check" style="color: #00b894; font-size: 2rem; margin-bottom: 0.5rem; display: block;"></i>
+                        <span style="font-size: 1.1rem; font-weight: 600;">100% Personnalisé</span>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: white; font-size: 1.5rem; margin-bottom: 1rem;">Ce que vous obtiendrez :</h3>
+                    <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.95); font-size: 1.1rem; text-align: left; max-width: 600px; margin: 0 auto;">
+                        <li style="margin-bottom: 0.8rem; padding-left: 2rem; position: relative;">
+                            <i class="fas fa-star" style="position: absolute; left: 0; color: #ffd700; font-size: 1.2rem;"></i>
+                            Un profil bien-être détaillé basé sur vos réponses
+                        </li>
+                        <li style="margin-bottom: 0.8rem; padding-left: 2rem; position: relative;">
+                            <i class="fas fa-star" style="position: absolute; left: 0; color: #ffd700; font-size: 1.2rem;"></i>
+                            Des recommandations de produits adaptés à vos besoins
+                        </li>
+                        <li style="margin-bottom: 0.8rem; padding-left: 2rem; position: relative;">
+                            <i class="fas fa-star" style="position: absolute; left: 0; color: #ffd700; font-size: 1.2rem;"></i>
+                            Des conseils personnalisés pour améliorer votre bien-être
+                        </li>
+                        <li style="margin-bottom: 0.8rem; padding-left: 2rem; position: relative;">
+                            <i class="fas fa-star" style="position: absolute; left: 0; color: #ffd700; font-size: 1.2rem;"></i>
+                            Un suivi personnalisé de Ludivine & Olivier
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="https://tally.so/r/wg1KzM" target="_blank" rel="noopener" class="btn" style="background: white; color: #6c5ce7; padding: 1.5rem 3rem; border-radius: 50px; font-size: 1.3rem; font-weight: 700; text-decoration: none; display: inline-block; box-shadow: 0 8px 25px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s; margin-top: 1rem;">
+                    <i class="fas fa-clipboard-check"></i> Commencer le Questionnaire
+                </a>
+                <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-top: 1.5rem;">
+                    <i class="fas fa-lock"></i> Vos données sont 100% sécurisées et confidentielles
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Pourquoi faire le questionnaire -->
+    <section style="padding: 4rem 0; background: white;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; color: #2d3436; margin-bottom: 1rem;">Pourquoi faire notre questionnaire ?</h2>
+                <p style="font-size: 1.2rem; color: #636e72; max-width: 700px; margin: 0 auto;">
+                    Notre approche personnalisée vous permet d'obtenir des résultats optimaux
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 20px; text-align: center; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <i class="fas fa-bullseye" style="font-size: 3rem; margin-bottom: 1rem; color: #ffd700;"></i>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Ciblage Précis</h3>
+                    <p style="font-size: 1rem; line-height: 1.6; opacity: 0.95;">
+                        Identifiez exactement les produits et programmes qui correspondent à vos objectifs de santé et de bien-être.
+                    </p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #2ECC71 0%, #27AE60 100%); padding: 2rem; border-radius: 20px; text-align: center; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <i class="fas fa-chart-line" style="font-size: 3rem; margin-bottom: 1rem; color: #ffd700;"></i>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Suivi Personnalisé</h3>
+                    <p style="font-size: 1rem; line-height: 1.6; opacity: 0.95;">
+                        Recevez un accompagnement adapté à votre profil et suivez vos progrès avec Ludivine & Olivier.
+                    </p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); padding: 2rem; border-radius: 20px; text-align: center; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <i class="fas fa-medal" style="font-size: 3rem; margin-bottom: 1rem; color: #ffd700;"></i>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Résultats Optimaux</h3>
+                    <p style="font-size: 1rem; line-height: 1.6; opacity: 0.95;">
+                        Maximisez vos résultats grâce à des recommandations basées sur votre profil unique.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA -->
+    <section style="padding: 4rem 0; background: linear-gradient(135deg, #e3eafc 0%, #f8f9fa 100%); text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; color: #2d3436; margin-bottom: 1rem;">Prêt à découvrir votre profil bien-être ?</h2>
+            <p style="font-size: 1.2rem; color: #636e72; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Rejoignez des centaines de personnes qui ont déjà transformé leur bien-être avec PureLiink
+            </p>
+            <a href="https://tally.so/r/wg1KzM" target="_blank" rel="noopener" class="btn" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: white; padding: 1.5rem 3rem; border-radius: 50px; font-size: 1.3rem; font-weight: 700; text-decoration: none; display: inline-block; box-shadow: 0 8px 25px rgba(108, 92, 231, 0.3); transition: transform 0.3s, box-shadow 0.3s;">
+                <i class="fas fa-rocket"></i> C'est parti !
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="assets/Charte décomposée PNG/PLBlanc(fondTransparent).png" alt="PureLink Logo" class="footer-logo">
+                        <h3 class="highlight">Ludivine & Olivier</h3>
+                    </div>
+                    <p>Votre partenaire de confiance pour une vie plus saine et équilibrée.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/people/Ludivine-Olivier/61573924110352/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ludivine.olivier.pureliink/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ludivine-et-olivier" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.tiktok.com/@ludivine.olivier8" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="produits.html">Produits</a></li>
+                        <li><a href="programmes.html">Programmes</a></li>
+                        <li><a href="affiliation.html">Affiliation</a></li>
+                        <li><a href="questionnaire.html">Questionnaire</a></li>
+                        <li><a href="avis.html">Avis</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="conditions-utilisation.html">Conditions d'utilisation</a></li>
+                        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                        <li><a href="contact.html">Support client</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Restez informé de nos dernières nouveautés et offres spéciales.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ludivine & Olivier - PureLink. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>    <script src="form-handler.js"></script>    <script src="cookie-consent.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "bmewburn.vscode-intelephense-client",
+    "xdebug.php-debug"
+  ],
+  "unwantedRecommendations": [
+    "dbaeumer.vscode-eslint" 
+  ]
+}

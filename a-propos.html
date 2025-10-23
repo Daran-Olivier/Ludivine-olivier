@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À propos de nous - Ludivine & Olivier</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Découvrez Ludivine & Olivier, vos partenaires officiels PureLink. Notre mission : vous accompagner vers une vie plus saine et équilibrée avec des produits naturels de qualité."
+    />
+    <meta
+      name="keywords"
+      content="Ludivine Olivier, partenaires PureLink, qui sommes-nous, conseillers bien-être"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://votre-domaine.com/a-propos.html" />
+    <meta property="og:title" content="À propos - Ludivine & Olivier" />
+    <meta
+      property="og:description"
+      content="Découvrez notre histoire et notre engagement pour votre bien-être"
+    />
+    <meta
+      property="og:image"
+      content="https://votre-domaine.com/assets/Charte décomposée PNG/PLBleu(fondTransparent).png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/Charte décomposée PNG/PLflavicon-carréBleu(fondTransparent).png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="cookie-consent.css" />
+  </head>
+  <body>
+    <!-- Header avec navigation -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-brand">
+          <span class="brand-text">Ludivine & Olivier</span>
+          <img
+            src="assets/Charte décomposée PNG/PLBleu(fondTransparent).png"
+            alt="PureLink Logo"
+            class="logo"
+          />
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link"
+              ><i class="fas fa-home"></i> Accueil</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="a-propos.html" class="nav-link active"
+              ><i class="fas fa-users"></i> À propos</a
+            >
+          </li>
+          <li class="nav-item dropdown">
+            <a href="produits.html" class="nav-link">
+              <i class="fas fa-shopping-bag"></i> Produits
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="produits.html#nutrition"
+                  ><i class="fas fa-apple-alt"></i> Nutrition</a
+                >
+              </li>
+              <li>
+                <a href="produits.html#care"
+                  ><i class="fas fa-heart"></i> Care</a
+                >
+              </li>
+              <li>
+                <a href="produits.html#drinks"
+                  ><i class="fas fa-coffee"></i> Drinks</a
+                >
+              </li>
+              <li>
+                <a href="produits.html#elixirs"
+                  ><i class="fas fa-magic"></i> Elixirs</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="programmes.html" class="nav-link"
+              ><i class="fas fa-download"></i> Programmes</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="affiliation.html" class="nav-link"
+              ><i class="fas fa-handshake"></i> Affiliation</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="questionnaire.html" class="nav-link"
+              ><i class="fas fa-clipboard-check"></i> Questionnaire</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="avis.html" class="nav-link"
+              ><i class="fas fa-comments"></i> Avis</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link"
+              ><i class="fas fa-envelope"></i> Contact</a
+            >
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="hero"
+        style="
+          min-height: 60vh;
+          padding: 6rem 2rem 4rem;
+          display: flex;
+          align-items: center;
+          gap: 4rem;
+        "
+      >
+        <div class="hero-content">
+          <h1 class="hero-title">🌿 À propos de nous</h1>
+          <p
+            class="hero-subtitle"
+            style="font-size: 1.3rem; max-width: 700px; margin: 0 auto"
+          >
+            Découvrez qui nous sommes et comment nous transformons votre
+            bien-être au quotidien
+          </p>
+        </div>
+        <div class="hero-image" id="about-hero-image">
+          <div class="hero-image-container">
+            <img
+              src="assets\logo_1 (Photo de profil Facebook).png"
+              alt="Ludivine et Olivier"
+              id="about-hero-img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Notre Histoire -->
+      <section class="features" style="padding: 4rem 0">
+        <div class="container">
+          <div class="section-header" style="margin-bottom: 3rem">
+            <h2>Bienvenue dans l'univers PureLiink</h2>
+          </div>
+
+          <div
+            style="
+              max-width: 900px;
+              margin: 0 auto;
+              font-size: 1.1rem;
+              line-height: 1.8;
+            "
+          >
+            <p style="margin-bottom: 2rem">
+              Nous sommes ravis de vous accueillir chez PureLiink, une marque
+              française passionnée par le bien-être et la santé naturelle. Notre
+              engagement ? Vous proposer des compléments alimentaires de qualité
+              premium, fabriqués en France avec soin et transparence.
+            </p>
+
+            <div
+              style="
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                padding: 2.5rem;
+                border-radius: 20px;
+                margin: 3rem 0;
+                border-left: 5px solid #9b59b6;
+              "
+            >
+              <h3
+                style="color: #2d3436; margin-bottom: 1.5rem; font-size: 1.4rem"
+              >
+                💡 Notre vision
+              </h3>
+              <p>
+                Chez PureLiink, nous croyons que le bien-être ne devrait jamais
+                être un compromis. C'est pourquoi nous avons développé une gamme
+                de produits naturels qui allient efficacité, qualité et plaisir.
+                Nos formules respectent le principe du "clean label" : des
+                ingrédients transparents, sans additifs inutiles, pour que vous
+                sachiez exactement ce que vous consommez.
+              </p>
+            </div>
+
+            <h3
+              style="color: #2d3436; margin: 3rem 0 1.5rem; font-size: 1.5rem"
+            >
+              🚀 Notre mission
+            </h3>
+            <p style="margin-bottom: 2rem">
+              Au-delà de nos produits, nous souhaitons créer une véritable
+              communauté. Nous offrons à chacun la possibilité de devenir
+              partenaire et de partager cette aventure avec nous. En tant
+              qu'affilié PureLiink, vous bénéficiez d'un accompagnement complet,
+              d'une formation personnalisée et de l'opportunité de générer des
+              revenus en recommandant des solutions bien-être qui font vraiment
+              la différence.
+            </p>
+
+            <div
+              style="
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                padding: 3rem;
+                border-radius: 20px;
+                margin: 3rem 0;
+                color: white;
+                text-align: center;
+              "
+            >
+              <h3 style="margin-bottom: 1.5rem; font-size: 1.6rem">
+                👫 Ludivine & Olivier
+              </h3>
+              <p
+                style="
+                  font-size: 1.1rem;
+                  line-height: 1.8;
+                  max-width: 700px;
+                  margin: 0 auto;
+                "
+              >
+                Nous sommes un couple de Charente-Maritime, passionnés par les
+                solutions naturelles et le bien-être. Notre approche est simple
+                : être à l'écoute, partager notre enthousiasme et accompagner
+                chacun dans sa quête d'équilibre. Nous mettons tout notre cœur
+                dans cette aventure pour créer une communauté bienveillante et
+                inspirante.
+              </p>
+            </div>
+
+            <h3
+              style="color: #2d3436; margin: 3rem 0 1.5rem; font-size: 1.5rem"
+            >
+              🎯 Pourquoi nous rejoindre ?
+            </h3>
+            <div style="display: grid; gap: 1.5rem; margin-top: 2rem">
+              <div
+                style="
+                  display: flex;
+                  gap: 1rem;
+                  align-items: start;
+                  padding: 1.5rem;
+                  background: #f8f9fa;
+                  border-radius: 15px;
+                  border-left: 4px solid #2ecc71;
+                "
+              >
+                <i
+                  class="fas fa-check-circle"
+                  style="color: #2ecc71; font-size: 1.5rem; margin-top: 0.2rem"
+                ></i>
+                <div>
+                  <h4 style="margin-bottom: 0.5rem; color: #2d3436">
+                    Des produits d'exception
+                  </h4>
+                  <p style="color: #636e72">
+                    Nos formules sont développées avec rigueur et soutenues par
+                    des études cliniques pour garantir leur efficacité
+                  </p>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 1rem;
+                  align-items: start;
+                  padding: 1.5rem;
+                  background: #f8f9fa;
+                  border-radius: 15px;
+                  border-left: 4px solid #9b59b6;
+                "
+              >
+                <i
+                  class="fas fa-check-circle"
+                  style="color: #9b59b6; font-size: 1.5rem; margin-top: 0.2rem"
+                ></i>
+                <div>
+                  <h4 style="margin-bottom: 0.5rem; color: #2d3436">
+                    Une opportunité d'affiliation attractive
+                  </h4>
+                  <p style="color: #636e72">
+                    Gagnez jusqu'à 25% de commissions en partageant des produits
+                    qui vous passionnent, sans investissement de départ
+                  </p>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 1rem;
+                  align-items: start;
+                  padding: 1.5rem;
+                  background: #f8f9fa;
+                  border-radius: 15px;
+                  border-left: 4px solid #4a90e2;
+                "
+              >
+                <i
+                  class="fas fa-check-circle"
+                  style="color: #4a90e2; font-size: 1.5rem; margin-top: 0.2rem"
+                ></i>
+                <div>
+                  <h4 style="margin-bottom: 0.5rem; color: #2d3436">
+                    Une communauté engagée
+                  </h4>
+                  <p style="color: #636e72">
+                    Rejoignez un réseau bienveillant où l'entraide, le partage
+                    et la réussite collective sont au cœur de nos valeurs
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              style="
+                text-align: center;
+                margin-top: 4rem;
+                padding: 3rem;
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                border-radius: 20px;
+              "
+            >
+              <h3
+                style="color: #2d3436; margin-bottom: 1.5rem; font-size: 1.6rem"
+              >
+                Prêt à nous rejoindre ?
+              </h3>
+              <p style="margin-bottom: 2rem; font-size: 1.1rem; color: #636e72">
+                Que vous souhaitiez découvrir nos produits ou devenir
+                partenaire, nous sommes là pour vous accompagner
+              </p>
+              <div
+                style="
+                  display: flex;
+                  gap: 1.5rem;
+                  justify-content: center;
+                  flex-wrap: wrap;
+                "
+              >
+                <a
+                  href="produits.html"
+                  class="btn btn-primary"
+                  style="padding: 1.2rem 2.5rem; font-size: 1.1rem"
+                >
+                  <i class="fas fa-shopping-bag"></i> Découvrir nos produits
+                </a>
+                <a
+                  href="affiliation.html"
+                  class="btn btn-secondary"
+                  style="padding: 1.2rem 2.5rem; font-size: 1.1rem"
+                >
+                  <i class="fas fa-handshake"></i> Devenir partenaire
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-brand">
+              <img
+                src="assets/Charte décomposée PNG/PLBlanc(fondTransparent).png"
+                alt="PureLink Logo"
+                class="footer-logo"
+              />
+              <h3 class="highlight">Ludivine & Olivier</h3>
+            </div>
+            <p>
+              Votre partenaire de confiance pour une vie plus saine et
+              équilibrée.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/people/Ludivine-Olivier/61573924110352/"
+                target="_blank"
+                class="social-link"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/ludivine.olivier.pureliink/"
+                target="_blank"
+                class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/ludivine-et-olivier"
+                target="_blank"
+                class="social-link"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@ludivine.olivier8"
+                target="_blank"
+                class="social-link"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="a-propos.html">À propos</a></li>
+              <li><a href="produits.html">Produits</a></li>
+              <li><a href="programmes.html">Programmes</a></li>
+              <li><a href="affiliation.html">Affiliation</a></li>
+              <li><a href="questionnaire.html">Questionnaire</a></li>
+              <li><a href="avis.html">Avis</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Support</h4>
+            <ul class="footer-links">
+              <li><a href="faq.html">FAQ</a></li>
+              <li>
+                <a href="conditions-utilisation.html"
+                  >Conditions d'utilisation</a
+                >
+              </li>
+              <li>
+                <a href="politique-confidentialite.html"
+                  >Politique de confidentialité</a
+                >
+              </li>
+              <li><a href="contact.html">Support client</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Newsletter</h4>
+            <p>
+              Restez informé de nos dernières nouveautés et offres spéciales.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Votre email" required />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Ludivine & Olivier - PureLink. Tous droits réservés.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="form-handler.js"></script>
+    <script src="cookie-consent.js"></script>
+  </body>
+</html>
+
+<!-- API Hero Images -->
+<script src="assets/js/purelink-hero-api.js"></script>

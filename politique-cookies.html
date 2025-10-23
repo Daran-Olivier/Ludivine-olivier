@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Cookies - Ludivine & Olivier</title>
+    <link rel="icon" type="image/png" href="assets/Charte décomposée PNG/PLflavicon-carréBleu(fondTransparent).png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .policy-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .policy-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .policy-header h1 {
+            font-size: 2.5rem;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-header .update-date {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .cookie-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .cookie-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .cookie-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cookie-table tr:hover {
+            background: #f9fafb;
+        }
+
+        .cookie-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .cookie-type.essential {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .cookie-type.analytics {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .cookie-type.marketing {
+            background: #fce7f3;
+            color: #9f1239;
+        }
+
+        .settings-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .settings-cta h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        .settings-cta button {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .settings-cta button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        section {
+            margin: 2rem 0;
+        }
+
+        section h2 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        section h3 {
+            color: #374151;
+            margin: 1.5rem 0 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        section p, section li {
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        .highlight-box {
+            background: #f0f9ff;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header avec navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <span class="brand-text">Ludivine & Olivier</span>
+                <img src="assets/Charte décomposée PNG/PLBleu(fondTransparent).png" alt="PureLink Logo" class="logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+                <li class="nav-item"><a href="a-propos.html" class="nav-link"><i class="fas fa-users"></i> À propos</a></li>
+                <li class="nav-item dropdown">
+                    <a href="produits.html" class="nav-link">
+                        <i class="fas fa-shopping-bag"></i> Produits
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="produits.html#nutrition"><i class="fas fa-apple-alt"></i> Nutrition</a></li>
+                        <li><a href="produits.html#care"><i class="fas fa-heart"></i> Care</a></li>
+                        <li><a href="produits.html#drinks"><i class="fas fa-coffee"></i> Drinks</a></li>
+                        <li><a href="produits.html#elixirs"><i class="fas fa-magic"></i> Elixirs</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="programmes.html" class="nav-link"><i class="fas fa-download"></i> Programmes</a></li>
+                <li class="nav-item"><a href="affiliation.html" class="nav-link"><i class="fas fa-handshake"></i> Affiliation</a></li>
+                <li class="nav-item"><a href="questionnaire.html" class="nav-link"><i class="fas fa-clipboard-check"></i> Questionnaire</a></li>
+                <li class="nav-item"><a href="avis.html" class="nav-link"><i class="fas fa-comments"></i> Avis</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="policy-container">
+        <div class="policy-header">
+            <h1>🍪 Politique de Cookies</h1>
+            <p class="update-date">Dernière mise à jour : 22 octobre 2025</p>
+        </div>
+
+        <section>
+            <h2><i class="fas fa-info-circle"></i> Qu'est-ce qu'un cookie ?</h2>
+            <p>
+                Un cookie est un petit fichier texte stocké sur votre appareil (ordinateur, smartphone, tablette) 
+                lorsque vous visitez un site web. Les cookies permettent au site de mémoriser vos actions et 
+                préférences pendant une période donnée, afin que vous n'ayez pas à les ressaisir à chaque visite.
+            </p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-list"></i> Types de cookies utilisés</h2>
+            
+            <h3>🔒 1. Cookies essentiels (obligatoires)</h3>
+            <p>
+                Ces cookies sont nécessaires au fonctionnement du site et ne peuvent pas être désactivés. 
+                Ils sont généralement définis en réponse à des actions que vous effectuez, comme la définition 
+                de vos préférences de confidentialité, la connexion ou le remplissage de formulaires.
+            </p>
+
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Nom du cookie</th>
+                        <th>Finalité</th>
+                        <th>Durée</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>purelink_cookie_consent</code></td>
+                        <td>Mémorise vos préférences en matière de cookies</td>
+                        <td>1 an</td>
+                    </tr>
+                    <tr>
+                        <td><code>PHPSESSID</code></td>
+                        <td>Maintient votre session de navigation</td>
+                        <td>Session</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>📊 2. Cookies analytiques (optionnels)</h3>
+            <p>
+                Ces cookies nous permettent de mesurer et d'analyser la façon dont vous utilisez notre site. 
+                Les informations collectées nous aident à améliorer le fonctionnement du site et votre expérience.
+            </p>
+
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Nom du cookie</th>
+                        <th>Fournisseur</th>
+                        <th>Finalité</th>
+                        <th>Durée</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>_ga</code></td>
+                        <td>Google Analytics</td>
+                        <td>Distingue les utilisateurs uniques</td>
+                        <td>2 ans</td>
+                    </tr>
+                    <tr>
+                        <td><code>_gid</code></td>
+                        <td>Google Analytics</td>
+                        <td>Distingue les utilisateurs uniques</td>
+                        <td>24 heures</td>
+                    </tr>
+                    <tr>
+                        <td><code>_gat</code></td>
+                        <td>Google Analytics</td>
+                        <td>Limite le taux de requêtes</td>
+                        <td>1 minute</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🎯 3. Cookies marketing (optionnels)</h3>
+            <p>
+                Ces cookies sont utilisés pour afficher des publicités pertinentes pour vous et vos centres 
+                d'intérêt. Ils peuvent également servir à limiter le nombre de fois où vous voyez une publicité 
+                et à mesurer l'efficacité des campagnes publicitaires.
+            </p>
+
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Nom du cookie</th>
+                        <th>Fournisseur</th>
+                        <th>Finalité</th>
+                        <th>Durée</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>_fbp</code></td>
+                        <td>Facebook Pixel</td>
+                        <td>Suivi des conversions et remarketing</td>
+                        <td>3 mois</td>
+                    </tr>
+                    <tr>
+                        <td><code>_fbc</code></td>
+                        <td>Facebook Pixel</td>
+                        <td>Stocke l'identifiant de la source de trafic</td>
+                        <td>3 mois</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="settings-cta">
+            <h3>⚙️ Gérer vos préférences</h3>
+            <p style="color: white; margin-bottom: 1rem;">
+                Vous pouvez modifier vos choix à tout moment en cliquant sur le bouton ci-dessous.
+            </p>
+            <button onclick="cookieConsent.showBanner()">
+                <i class="fas fa-cog"></i> Paramètres des cookies
+            </button>
+        </div>
+
+        <section>
+            <h2><i class="fas fa-shield-alt"></i> Vos droits</h2>
+            <p>Vous disposez des droits suivants concernant les cookies :</p>
+            <ul>
+                <li><strong>Droit de consentir ou de refuser :</strong> Vous pouvez accepter ou refuser les cookies non essentiels.</li>
+                <li><strong>Droit de retirer votre consentement :</strong> Vous pouvez modifier vos préférences à tout moment.</li>
+                <li><strong>Droit d'être informé :</strong> Nous vous informons de manière transparente sur l'utilisation des cookies.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong><i class="fas fa-exclamation-circle"></i> Important :</strong>
+                Le refus des cookies analytiques et marketing n'affectera pas votre expérience sur notre site. 
+                Seuls les cookies essentiels, nécessaires au fonctionnement du site, seront conservés.
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-trash-alt"></i> Comment supprimer les cookies ?</h2>
+            
+            <h3>Via votre navigateur</h3>
+            <p>Vous pouvez configurer votre navigateur pour supprimer tous les cookies :</p>
+            <ul>
+                <li><strong>Google Chrome :</strong> Paramètres → Confidentialité et sécurité → Cookies et autres données de sites</li>
+                <li><strong>Firefox :</strong> Paramètres → Vie privée et sécurité → Cookies et données de sites</li>
+                <li><strong>Safari :</strong> Préférences → Confidentialité → Gérer les données de sites web</li>
+                <li><strong>Edge :</strong> Paramètres → Confidentialité, recherche et services → Cookies et données de site</li>
+            </ul>
+
+            <h3>Via notre site</h3>
+            <p>
+                Utilisez le bouton ci-dessus "Paramètres des cookies" pour modifier vos préférences ou 
+                cliquez sur l'icône flottante <i class="fas fa-cookie-bite"></i> en bas à gauche de la page.
+            </p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-globe"></i> Cookies tiers</h2>
+            <p>
+                Certains cookies sont déposés par des services tiers que nous utilisons (Google Analytics, 
+                Facebook Pixel, etc.). Ces services ont leurs propres politiques de confidentialité :
+            </p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank">Politique de confidentialité de Google</a></li>
+                <li><a href="https://www.facebook.com/privacy/policy/" target="_blank">Politique de confidentialité de Facebook</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-sync-alt"></i> Mise à jour de cette politique</h2>
+            <p>
+                Nous nous réservons le droit de modifier cette politique de cookies à tout moment. 
+                Toute modification sera publiée sur cette page avec une nouvelle date de mise à jour. 
+                Nous vous encourageons à consulter régulièrement cette page.
+            </p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-envelope"></i> Nous contacter</h2>
+            <p>
+                Pour toute question concernant notre utilisation des cookies, vous pouvez nous contacter :
+            </p>
+            <ul>
+                <li><strong>Email :</strong> <a href="mailto:ludivine.olivier.pureliink@gmail.com">ludivine.olivier.pureliink@gmail.com</a></li>
+                <li><strong>Formulaire :</strong> <a href="contact.html">Page de contact</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="assets/Charte décomposée PNG/PLBlanc(fondTransparent).png" alt="PureLink Logo" class="footer-logo">
+                        <h3 class="highlight">Ludivine & Olivier</h3>
+                    </div>
+                    <p>Votre partenaire de confiance pour une vie plus saine et équilibrée.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/people/Ludivine-Olivier/61573924110352/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ludivine.olivier.pureliink/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ludivine-et-olivier" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.tiktok.com/@ludivine.olivier8" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="produits.html">Produits</a></li>
+                        <li><a href="programmes.html">Programmes</a></li>
+                        <li><a href="affiliation.html">Affiliation</a></li>
+                        <li><a href="questionnaire.html">Questionnaire</a></li>
+                        <li><a href="avis.html">Avis</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="conditions-utilisation.html">Conditions d'utilisation</a></li>
+                        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                        <li><a href="contact.html">Support client</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Restez informé de nos dernières nouveautés et offres spéciales.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ludivine & Olivier - PureLink. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cookie-consent.js"></script>
+</body>
+</html>

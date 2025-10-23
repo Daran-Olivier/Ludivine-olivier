@@ -1,0 +1,126 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "📦 Installer les dépendances",
+            "type": "shell",
+            "command": "npm",
+            "args": ["install"],
+            "options": {
+                "cwd": "${workspaceFolder}/backend"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "group": "build"
+        },
+        {
+            "label": "🗄️  Initialiser la base de données",
+            "type": "shell",
+            "command": "npm",
+            "args": ["run", "init-db"],
+            "options": {
+                "cwd": "${workspaceFolder}/backend"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "group": "build"
+        },
+        {
+            "label": "🚀 Démarrer le serveur",
+            "type": "shell",
+            "command": "npm",
+            "args": ["start"],
+            "options": {
+                "cwd": "${workspaceFolder}/backend"
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "^$",
+                    "file": 1,
+                    "location": 2,
+                    "message": 3
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*Serveur.*",
+                    "endsPattern": "^.*Serveur démarré.*"
+                }
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "🔧 Démarrer en mode développement (avec nodemon)",
+            "type": "shell",
+            "command": "npm",
+            "args": ["run", "dev"],
+            "options": {
+                "cwd": "${workspaceFolder}/backend"
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "^$",
+                    "file": 1,
+                    "location": 2,
+                    "message": 3
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*starting.*",
+                    "endsPattern": "^.*started.*"
+                }
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "🌐 Ouvrir l'interface admin",
+            "type": "shell",
+            "command": "start",
+            "args": ["http://localhost:3000/admin"],
+            "windows": {
+                "command": "start",
+                "args": ["http://localhost:3000/admin"]
+            },
+            "linux": {
+                "command": "xdg-open",
+                "args": ["http://localhost:3000/admin"]
+            },
+            "osx": {
+                "command": "open",
+                "args": ["http://localhost:3000/admin"]
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "never"
+            }
+        },
+        {
+            "label": "✅ Configuration complète (tout-en-un)",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "📦 Installer les dépendances",
+                "🗄️  Initialiser la base de données",
+                "🚀 Démarrer le serveur"
+            ],
+            "problemMatcher": [],
+            "group": "build"
+        }
+    ]
+}

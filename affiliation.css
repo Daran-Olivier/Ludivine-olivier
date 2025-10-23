@@ -1,0 +1,12 @@
+/* ========================================
+   Styles spécifiques pour affiliation.html
+   ======================================== */
+
+/* Styles pour les sections d'affiliation */
+.affiliation-card {
+    transition: transform 0.3s ease;
+}
+
+.affiliation-card:hover {
+    transform: scale(1.02);
+}

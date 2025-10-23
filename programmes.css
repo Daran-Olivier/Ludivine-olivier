@@ -1,0 +1,18 @@
+/* ========================================
+   Styles spécifiques pour programmes.html
+   ======================================== */
+
+/* Styles pour les cartes de programmes */
+.program-card {
+    background: linear-gradient(135deg, #e3eafc 80%, #f8f9fa 100%);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(74,144,226,0.18);
+    padding: 2.5rem 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 12px solid var(--primary-color);
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(74,144,226,0.25);
+}

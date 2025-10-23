@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produits - Ludivine & Olivier</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Catalogue complet des produits PureLink : gummies, poudres protéinées, compléments alimentaires et accessoires de bien-être. Nutrition naturelle pour votre santé."
+    />
+    <meta
+      name="keywords"
+      content="produits PureLink, gummies, compléments alimentaires, nutrition, poudres protéinées, bien-être naturel"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://votre-domaine.com/produits.html" />
+    <meta
+      property="og:title"
+      content="Produits PureLink - Ludivine & Olivier"
+    />
+    <meta
+      property="og:description"
+      content="Découvrez notre gamme complète de produits de bien-être naturels"
+    />
+    <meta
+      property="og:image"
+      content="https://votre-domaine.com/assets/Charte décomposée PNG/PLBleu(fondTransparent).png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/Charte décomposée PNG/PLflavicon-carréBleu(fondTransparent).png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="cookie-consent.css" />
+  </head>
+  <body
+    style="
+      color: #222;
+      background: linear-gradient(135deg, #e3eafc 80%, #f8f9fa 100%);
+    "
+  >
+    <!-- Header avec navigation -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-brand">
+          <span class="brand-text">Ludivine & Olivier</span>
+          <img
+            src="assets/Charte décomposée PNG/PLBleu(fondTransparent).png"
+            alt="PureLink Logo"
+            class="logo"
+          />
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link"
+              ><i class="fas fa-home"></i> Accueil</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="a-propos.html" class="nav-link"
+              ><i class="fas fa-users"></i> À propos</a
+            >
+          </li>
+          <li class="nav-item dropdown">
+            <a href="produits.html" class="nav-link active">
+              <i class="fas fa-shopping-bag"></i> Produits
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="produits.html#nutrition"
+                  ><i class="fas fa-apple-alt"></i> Nutrition</a
+                >
+              </li>
+              <li>
+                <a href="produits.html#care"
+                  ><i class="fas fa-heart"></i> Care</a
+                >
+              </li>
+              <li>
+                <a href="produits.html#drinks"
+                  ><i class="fas fa-coffee"></i> Drinks</a
+                >
+              </li>
+              <li>
+                <a href="produits.html#elixirs"
+                  ><i class="fas fa-magic"></i> Elixirs</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="programmes.html" class="nav-link"
+              ><i class="fas fa-download"></i> Programmes</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="affiliation.html" class="nav-link"
+              ><i class="fas fa-handshake"></i> Affiliation</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="questionnaire.html" class="nav-link"
+              ><i class="fas fa-clipboard-check"></i> Questionnaire</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="avis.html" class="nav-link"
+              ><i class="fas fa-comments"></i> Avis</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link"
+              ><i class="fas fa-envelope"></i> Contact</a
+            >
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+      <div class="container">
+        <div class="breadcrumb-content">
+          <h1 style="color: #ffffff">Nos Produits</h1>
+          <nav class="breadcrumb-nav">
+            <a href="index.html">Accueil</a>
+            <span class="separator"><i class="fas fa-chevron-right"></i></span>
+            <span>Produits</span>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filtres de catégories -->
+    <section class="category-filters">
+      <div class="container">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-category="all">
+            <i class="fas fa-th"></i> Tous les produits
+          </button>
+          <button class="filter-tab" data-category="nutrition">
+            <i class="fas fa-apple-alt"></i> Nutrition
+          </button>
+          <button class="filter-tab" data-category="care">
+            <i class="fas fa-heart"></i> Care
+          </button>
+          <button class="filter-tab" data-category="drinks">
+            <i class="fas fa-coffee"></i> Drinks
+          </button>
+          <button class="filter-tab" data-category="elixirs">
+            <i class="fas fa-magic"></i> Elixirs
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Drinks -->
+    <section id="drinks" class="product-category">
+      <div class="container">
+        <div class="category-header">
+          <div class="category-icon">
+            <i class="fas fa-coffee"></i>
+          </div>
+          <div class="category-info">
+            <h2 style="color: #2ecc71">Drinks</h2>
+            <p>
+              Découvrez nos kits fonctionnels pour votre bien-être au quotidien
+            </p>
+          </div>
+        </div>
+        <div class="products-grid" data-category="drinks">
+          <div class="product-card" data-product="sleep">
+            <div class="product-image">
+              <img
+                src="assets/KIT 1 Go to SLEEP table basse.jpeg"
+                alt="Kit Go to Sleep"
+              />
+              <div class="product-badge">
+                <i class="fas fa-moon"></i> Sommeil
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Go to Sleep</h3>
+              <p>Améliorez la qualité de votre sommeil naturellement</p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Sommeil réparateur</span
+                >
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Détente</span
+                >
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="go-to-sleep.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card" data-product="relax">
+            <div class="product-image">
+              <img
+                src="assets/KIT 1 Cool & RELAX table basse.jpeg"
+                alt="Kit Cool & Relax"
+              />
+              <div class="product-badge">
+                <i class="fas fa-spa"></i> Relaxation
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Cool & Relax</h3>
+              <p>Détendez-vous et récupérez avec notre formule apaisante</p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Anti-stress</span
+                >
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Récupération</span
+                >
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="cool-relax.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card" data-product="boost">
+            <div class="product-image">
+              <img src="assets/KIT 1 BOOST face.jpeg" alt="Kit Boost" />
+              <div class="product-badge">
+                <i class="fas fa-bolt"></i> Énergie
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Energy Boost</h3>
+              <p>
+                Boostez votre énergie et votre vitalité pour des performances
+                optimales
+              </p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Énergie</span
+                >
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Performance</span
+                >
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="energy-boost.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card" data-product="collagen">
+            <div class="product-image">
+              <img src="assets/KIT 1 COLLAGEN face.jpeg" alt="Kit Collagen" />
+              <div class="product-badge">
+                <i class="fas fa-star"></i> Premium
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Collagen</h3>
+              <p>
+                Renforcez votre peau, cheveux et ongles avec notre formule
+                collagène avancée
+              </p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Anti-âge</span
+                >
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Hydratation</span
+                >
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="collagen.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card" data-product="digest">
+            <div class="product-image">
+              <img src="assets/DIGEST.png" alt="Elixir Digest" />
+              <div class="product-badge">
+                <i class="fas fa-leaf"></i> Digestif
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Easy Digest</h3>
+              <p>Digérez facile, vivez léger !</p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Digestion</span
+                >
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Confort</span
+                >
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="easy-digest.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Nutrition -->
+    <section id="nutrition" class="product-category">
+      <div class="container">
+        <div class="category-header">
+          <div class="category-icon">
+            <i class="fas fa-apple-alt"></i>
+          </div>
+          <div class="category-info">
+            <h2 style="color: #9b59b6">Nutrition</h2>
+            <p>
+              Savourez nos boissons fonctionnelles pour une nutrition optimale
+            </p>
+          </div>
+        </div>
+        <div class="products-grid" data-category="nutrition">
+          <div class="product-card" data-product="cafe">
+            <div class="product-image">
+              <img src="assets/ESS Café.png" alt="ESS Café" />
+              <div class="product-badge">
+                <i class="fas fa-fire"></i> Énergie
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Café</h3>
+              <p>
+                Café fonctionnel pour un boost d'énergie naturel et une
+                concentration optimale
+              </p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Concentration</span
+                >
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Énergie durable</span
+                >
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="cafe.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card" data-product="chocolat">
+            <div class="product-image">
+              <img src="assets/ESS Chocolat.png" alt="ESS Chocolat" />
+              <div class="product-badge">
+                <i class="fas fa-heart"></i> Plaisir
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Chocolat</h3>
+              <p>
+                Chocolat fonctionnel riche en antioxydants pour votre bien-être
+              </p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Antioxydants</span
+                >
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Bien-être</span
+                >
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="chocolat.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card" data-product="mangue">
+            <div class="product-image">
+              <img src="assets/mangue v1 cuisine.png" alt="Boisson Mangue" />
+              <div class="product-badge">
+                <i class="fas fa-sun"></i> Tropical
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Mangue-Yuzu</h3>
+              <p>Saveur tropicale riche en vitamines pour votre vitalité</p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Vitamine C</span
+                >
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Rafraîchissant</span
+                >
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="mangue.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card" data-product="vanille">
+            <div class="product-image">
+              <img
+                src="assets/Vanille_Cuisine_16_9_23-90.png"
+                alt="Boisson Vanille"
+              />
+              <div class="product-badge">
+                <i class="fas fa-ice-cream"></i> Gourmand
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Vanille</h3>
+              <p>Saveur douce et crémeuse pour le plaisir et la nutrition</p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Saveur unique</span
+                >
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Satisfaction</span
+                >
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="vanille.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Care -->
+    <section id="care" class="product-category">
+      <div class="container">
+        <div class="category-header">
+          <div class="category-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="category-info">
+            <h2 style="color: #f39c12">Care</h2>
+            <p>Prenez soin de votre corps avec notre produit de soin naturel</p>
+          </div>
+        </div>
+        <div class="products-grid" data-category="care">
+          <div class="product-card" data-product="care93">
+            <div class="product-image">
+              <img src="assets/93.png" alt="Soin 93" />
+              <div class="product-badge">
+                <i class="fas fa-leaf"></i> Naturel
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Omega 3</h3>
+              <p>Apportez à votre corps les bienfaits de la mer !</p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> EPA & DHA</span
+                >
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Santé cardiaque</span
+                >
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="omega-3.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Elixirs -->
+    <section id="elixirs" class="product-category">
+      <div class="container">
+        <div class="category-header">
+          <div class="category-icon">
+            <i class="fas fa-magic"></i>
+          </div>
+          <div class="category-info">
+            <h2 style="color: #e67e22">Elixirs</h2>
+            <p>Transformez votre routine avec nos elixirs spécialisés</p>
+          </div>
+        </div>
+        <div class="products-grid" data-category="elixirs">
+          <div class="product-card" data-product="elixir62">
+            <div class="product-image">
+              <img src="assets/6 2.png" alt="Elixir 62" />
+              <div class="product-badge">
+                <i class="fas fa-flask"></i> Spécial
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Detox</h3>
+              <p>Pour une sensation de légèreté !</p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Détoxification</span
+                >
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Légèreté</span
+                >
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="detox.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card" data-product="elixir5">
+            <div class="product-image">
+              <img src="assets/5.png" alt="Elixir 5" />
+              <div class="product-badge">
+                <i class="fas fa-gem"></i> Premium
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Immunity</h3>
+              <p>Fortifie ton immunité et gagne en vitalité !</p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Défenses naturelles</span
+                >
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Énergie</span
+                >
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="immunity.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card" data-product="elixir42">
+            <div class="product-image">
+              <img src="assets/4 2.png" alt="Elixir 42" />
+              <div class="product-badge">
+                <i class="fas fa-star"></i> Exclusif
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Love Energy</h3>
+              <p>Booste ton énergie, booste ta libido !</p>
+              <div class="product-benefits">
+                <span class="benefit"
+                  ><i class="fas fa-check"></i> Vitalité</span
+                >
+                <span class="benefit"><i class="fas fa-check"></i> Libido</span>
+              </div>
+              <div class="product-actions">
+                <a class="btn btn-primary product-btn" href="love-energy.html">
+                  <i class="fas fa-eye"></i> Découvrir
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal produit -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img id="modalImage" src="" alt="" />
+          </div>
+          <div class="modal-info">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <div class="modal-benefits" id="modalBenefits"></div>
+            <div class="modal-points">
+              <div class="points-earned">
+                <i class="fas fa-star"></i>
+                <span>+10 Points Santé gagnés !</span>
+              </div>
+            </div>
+            <button class="btn btn-primary" onclick="closeModal()">
+              Continuer l'exploration
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-brand">
+              <img
+                src="assets/Charte décomposée PNG/PLBlanc(fondTransparent).png"
+                alt="PureLink Logo"
+                class="footer-logo"
+              />
+              <h3 class="highlight">Ludivine & Olivier</h3>
+            </div>
+            <p>
+              Votre partenaire de confiance pour une vie plus saine et
+              équilibrée.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/people/Ludivine-Olivier/61573924110352/"
+                target="_blank"
+                class="social-link"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/ludivine.olivier.pureliink/"
+                target="_blank"
+                class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/ludivine-et-olivier"
+                target="_blank"
+                class="social-link"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@ludivine.olivier8"
+                target="_blank"
+                class="social-link"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="a-propos.html">À propos</a></li>
+              <li><a href="produits.html">Produits</a></li>
+              <li><a href="programmes.html">Programmes</a></li>
+              <li><a href="affiliation.html">Affiliation</a></li>
+              <li><a href="questionnaire.html">Questionnaire</a></li>
+              <li><a href="avis.html">Avis</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Support</h4>
+            <ul class="footer-links">
+              <li><a href="faq.html">FAQ</a></li>
+              <li>
+                <a href="conditions-utilisation.html"
+                  >Conditions d'utilisation</a
+                >
+              </li>
+              <li>
+                <a href="politique-confidentialite.html"
+                  >Politique de confidentialité</a
+                >
+              </li>
+              <li><a href="contact.html">Support client</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Newsletter</h4>
+            <p>
+              Restez informé de nos dernières nouveautés et offres spéciales.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Votre email" required />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Ludivine & Olivier - PureLink. Tous droits réservés.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="f
+    <!-- Intégration API PureLink (ajoute les produits API aux produits existants) -->
+    <script src="assets/js/purelink-api-integration.js"></script>
+  </body>
+</html>

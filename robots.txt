@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Bloquer l'accès au backend et admin
+Disallow: /backend-php/admin/
+Disallow: /backend-php/install/
+Disallow: /backend-php/config/
+
+# Fichiers de test et documentation
+Disallow: /test-formulaires.html
+Disallow: /test-produits.html
+Disallow: /conception/
+Disallow: /documentation/
+Disallow: /espace de travail/
+
+# Fichiers de développement
+Disallow: /*.md
+Disallow: /*.txt
+Disallow: /.vscode/
+Disallow: /.github/
+
+# Sitemap
+Sitemap: https://votre-domaine.com/sitemap.xml
