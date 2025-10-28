@@ -1,10 +1,6 @@
 // ========================================
 // Scripts spécifiques pour contact.html
-// ========================================
-
-console.log('Page contact.html chargée');
-
-document.addEventListener('DOMContentLoaded', function() {
+// ========================================document.addEventListener('DOMContentLoaded', function() {
     // Affichage dynamique des champs selon le choix
     const choixRadios = document.querySelectorAll('input[name="choixContact"]');
     const rdvFields = document.getElementById('rdv-fields');

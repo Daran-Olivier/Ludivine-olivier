@@ -110,9 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             const result = await response.json();
-            if (result.success) {
-                console.log(`Image hero mise à jour pour ${page}`);
-                // Recharger l'image sur la page
+            if (result.success) {// Recharger l'image sur la page
                 if (page === 'index') {
                     loadHeroImage('index', 'index-hero-img');
                 } else if (page === 'about') {

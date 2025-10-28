@@ -174,10 +174,7 @@ class CookieConsent {
         document.cookie = `${this.cookieName}=${encodeURIComponent(consentString)};expires=${expiryDate.toUTCString()};path=/;SameSite=Lax`;
         
         // Sauvegarder aussi dans localStorage comme backup
-        localStorage.setItem(this.cookieName, consentString);
-        
-        console.log('✅ Consentement sauvegardé:', consent);
-    }
+        localStorage.setItem(this.cookieName, consentString);}
 
     getLocalConsent() {
         try {
@@ -198,17 +195,13 @@ class CookieConsent {
             cookie = cookie.trim();
             if (cookie.indexOf(name) === 0) {
                 try {
-                    const consent = JSON.parse(cookie.substring(name.length));
-                    console.log('✅ Consentement trouvé dans les cookies:', consent);
-                    return consent;
+                    const consent = JSON.parse(cookie.substring(name.length));return consent;
                 } catch (e) {
                     console.warn('Erreur parsing cookie:', e);
                     return null;
                 }
             }
-        }
-        console.log('ℹ️ Aucun consentement trouvé dans les cookies');
-        return null;
+        }return null;
     }    applyConsent(consent) {
         // Appliquer les cookies essentiels (toujours actifs)
         this.loadEssentialCookies();
@@ -232,15 +225,10 @@ class CookieConsent {
     }
 
     loadEssentialCookies() {
-        // Cookies nécessaires au fonctionnement du site
-        console.log('✅ Cookies essentiels chargés');
-        // Exemple : préférences de langue, panier, session
+        // Cookies nécessaires au fonctionnement du site// Exemple : préférences de langue, panier, session
     }
 
-    loadAnalyticsCookies() {
-        console.log('📊 Cookies analytiques chargés');
-        
-        // Google Analytics (exemple)
+    loadAnalyticsCookies() {// Google Analytics (exemple)
         /*
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -252,18 +240,13 @@ class CookieConsent {
         */
     }
 
-    removeAnalyticsCookies() {
-        console.log('🚫 Cookies analytiques supprimés');
-        // Supprimer les cookies Google Analytics
+    removeAnalyticsCookies() {// Supprimer les cookies Google Analytics
         this.deleteCookie('_ga');
         this.deleteCookie('_gid');
         this.deleteCookie('_gat');
     }
 
-    loadMarketingCookies() {
-        console.log('🎯 Cookies marketing chargés');
-        
-        // Facebook Pixel (exemple)
+    loadMarketingCookies() {// Facebook Pixel (exemple)
         /*
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -278,9 +261,7 @@ class CookieConsent {
         */
     }
 
-    removeMarketingCookies() {
-        console.log('🚫 Cookies marketing supprimés');
-        // Supprimer les cookies marketing
+    removeMarketingCookies() {// Supprimer les cookies marketing
         this.deleteCookie('_fbp');
         this.deleteCookie('_fbc');
     }
@@ -338,8 +319,5 @@ document.addEventListener('DOMContentLoaded', () => {
     cookieConsent = new CookieConsent();
     
     // Debug pour développement local
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-        console.log('🔧 Mode développement détecté - les cookies peuvent ne pas fonctionner correctement');
-        console.log('📂 Utilisation du localStorage comme solution de backup');
-    }
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {}
 });

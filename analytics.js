@@ -72,9 +72,7 @@ class SiteAnalytics {
             analytics.viewHistory = analytics.viewHistory.slice(-1000);
         }
 
-        this.saveAnalytics(analytics);
-        console.log(`📊 Analytics: Page vue enregistrée - ${currentPage}`);
-    }
+        this.saveAnalytics(analytics);}
 
     // ========================================
     // TRACKING DES SESSIONS
@@ -100,9 +98,7 @@ class SiteAnalytics {
                 pages: [window.location.pathname.split('/').pop() || 'index.html']
             });
 
-            this.saveAnalytics(analytics);
-            console.log(`📊 Analytics: Nouvelle session - ${newSessionId}`);
-        } else {
+            this.saveAnalytics(analytics);} else {
             // Session existante - ajouter la page
             const analytics = this.getAnalytics();
             const currentSession = analytics.sessions?.find(s => s.id === sessionId);
@@ -248,15 +244,11 @@ class SiteAnalytics {
         const a = document.createElement('a');
         a.href = url;
         a.download = `analytics_${new Date().toISOString().split('T')[0]}.json`;
-        a.click();
-        console.log('📊 Statistiques exportées !');
-    }
+        a.click();}
 
     clearStats() {
         if (confirm('⚠️ Êtes-vous sûr de vouloir effacer toutes les statistiques ?')) {
-            localStorage.removeItem(this.storageKey);
-            console.log('🗑️ Statistiques supprimées');
-            return true;
+            localStorage.removeItem(this.storageKey);return true;
         }
         return false;
     }
@@ -292,10 +284,7 @@ function initGoogleAnalytics() {
     gtag('config', GA_MEASUREMENT_ID, {
         'anonymize_ip': true,
         'cookie_flags': 'SameSite=None;Secure'
-    });
-
-    console.log('📊 Google Analytics chargé');
-}
+    });}
 
 function getCookie(name) {
     const value = `; ${document.cookie}`;

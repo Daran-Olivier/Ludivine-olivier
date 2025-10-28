@@ -1,10 +1,6 @@
 // ========================================
 // Scripts spécifiques pour index.html
-// ========================================
-
-console.log('Page index.html chargée');
-
-// Animation des statistiques au défilement
+// ========================================// Animation des statistiques au défilement
 document.addEventListener('DOMContentLoaded', function() {
     const statNumbers = document.querySelectorAll('.stat-number');
     
