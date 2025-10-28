@@ -175,7 +175,7 @@ pureliink-ludivine-olivier/
 │   └── cookie-consent.js            # Gestion cookies RGPD
 │
 ├── 📁 assets/                       # Ressources
-│   ├── Charte décomposée PNG/       # Logos et visuels
+│   ├── chartedecomposeepng/       # Logos et visuels
 │   └── logo_1.png                   # Photo profil
 │
 ├── 📁 conception/                   # Fichiers de conception

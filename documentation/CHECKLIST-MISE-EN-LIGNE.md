@@ -81,7 +81,7 @@ Les endpoints Formspree sont déjà configurés dans `form-handler.js` :
 ```html
 <meta property="og:title" content="Ludivine & Olivier - Partenaires PureLink">
 <meta property="og:description" content="Votre partenaire santé et bien-être avec les produits PureLink">
-<meta property="og:image" content="https://votre-domaine.com/assets/Charte décomposée PNG/PLBleu(fondTransparent).png">
+<meta property="og:image" content="https://votre-domaine.com/assets/chartedecomposeepng/PLBleu(fondTransparent).png">
 <meta property="og:url" content="https://votre-domaine.com">
 <meta property="og:type" content="website">
 ```
@@ -146,7 +146,7 @@ Sitemap: https://votre-domaine.com/sitemap.xml
 ```
 
 ### 8. ℹ️ Favicon (DÉJÀ CONFIGURÉ ✓)
-- ✅ Favicon présent : `assets/Charte décomposée PNG/PLflavicon-carréBleu(fondTransparent).png`
+- ✅ Favicon présent : `assets/chartedecomposeepng/PLflavicon-carréBleu(fondTransparent).png`
 - ✅ Bien référencé dans toutes les pages HTML
 
 ---

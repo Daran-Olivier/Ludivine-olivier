@@ -20,4 +20,4 @@ Disallow: /.vscode/
 Disallow: /.github/
 
 # Sitemap
-Sitemap: https://votre-domaine.com/sitemap.xml
+Sitemap: https://www.ludivineolivier.fr/sitemap.xml
