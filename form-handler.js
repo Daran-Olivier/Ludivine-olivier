@@ -1,15 +1,17 @@
 // ========================================
-// CONFIGURATION - À PERSONNALISER
+// CONFIGURATION EMAILJS
 // ========================================
-// Inscrivez-vous sur https://formspree.io (gratuit)
-// Remplacez 'YOUR_FORM_ID' par votre ID Formspree
-
-const FORMSPREE_CONFIG = {
-    contact: 'https://formspree.io/f/mdkwrapg', // Pour le formulaire de contact
-    newsletter: 'https://formspree.io/f/manpgqlj', // Pour les newsletters
-    affiliation: 'https://formspree.io/f/xqayvegl', // Pour l'affiliation
-    review: 'https://formspree.io/f/xzzjldkk' // Pour les avis
+const EMAILJS_CONFIG = {
+    serviceID: 'service_8yodiwp',
+    templateID: 'template_cd6n0sm',
+    autoReplyTemplateID: 'template_fokk8zw',
+    publicKey: 'xSY-ihREyXaJ9A584'
 };
+
+// Initialiser EmailJS
+(function() {
+    emailjs.init(EMAILJS_CONFIG.publicKey);
+})();
 
 // ========================================
 // GESTION DU FORMULAIRE DE CONTACT
@@ -22,38 +24,39 @@ if (contactForm) {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.innerHTML;
         
-        // Animation de chargement
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
         submitBtn.disabled = true;
         
         const formData = new FormData(contactForm);
-        const data = {
-            nom: formData.get('name'),
-            email: formData.get('email'),
-            telephone: formData.get('phone'),
-            sujet: formData.get('subject'),
+        const templateParams = {
+            from_name: formData.get('name'),
+            from_email: formData.get('email'),
+            phone: formData.get('phone'),
+            subject: formData.get('subject'),
             message: formData.get('message'),
-            _subject: `Nouveau message de ${formData.get('name')}`,
-            _replyto: formData.get('email')
+            form_type: 'Contact'
         };
         
         try {
-            const response = await fetch(FORMSPREE_CONFIG.contact, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+            await emailjs.send(
+                EMAILJS_CONFIG.serviceID,
+                EMAILJS_CONFIG.templateID,
+                templateParams
+            );
             
-            if (response.ok) {
-                showSuccessMessage(contactForm, '✅ Message envoyé avec succès ! Nous vous répondrons rapidement.');
-                contactForm.reset();
-            } else {
-                throw new Error('Erreur serveur');
-            }
+            await emailjs.send(
+                EMAILJS_CONFIG.serviceID,
+                EMAILJS_CONFIG.autoReplyTemplateID,
+                {
+                    to_email: formData.get('email'),
+                    to_name: formData.get('name')
+                }
+            );
+            
+            showSuccessMessage(contactForm, '✅ Message envoyé avec succès ! Nous vous répondrons rapidement.');
+            contactForm.reset();
         } catch (error) {
-            showErrorMessage(contactForm, '❌ Erreur lors de l\'envoi. Veuillez réessayer ou nous contacter directement.');
+            showErrorMessage(contactForm, '❌ Erreur lors de l\'envoi. Veuillez réessayer.');
         } finally {
             submitBtn.innerHTML = originalBtnText;
             submitBtn.disabled = false;
@@ -76,32 +79,33 @@ if (partnershipForm) {
         submitBtn.disabled = true;
         
         const formData = new FormData(partnershipForm);
-        const data = {
-            nom: formData.get('name'),
-            prenom: formData.get('firstname'),
-            email: formData.get('email'),
-            telephone: formData.get('phone'),
+        const templateParams = {
+            from_name: `${formData.get('name')} ${formData.get('firstname')}`,
+            from_email: formData.get('email'),
+            phone: formData.get('phone'),
             motivation: formData.get('motivation'),
             experience: formData.get('experience'),
-            _subject: `Nouvelle demande d'affiliation - ${formData.get('name')} ${formData.get('firstname')}`,
-            _replyto: formData.get('email')
+            form_type: 'Affiliation'
         };
         
         try {
-            const response = await fetch(FORMSPREE_CONFIG.affiliation, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+            await emailjs.send(
+                EMAILJS_CONFIG.serviceID,
+                EMAILJS_CONFIG.templateID,
+                templateParams
+            );
             
-            if (response.ok) {
-                showSuccessMessage(partnershipForm, '🎉 Candidature envoyée ! Nous reviendrons vers vous très bientôt.');
-                partnershipForm.reset();
-            } else {
-                throw new Error('Erreur serveur');
-            }
+            await emailjs.send(
+                EMAILJS_CONFIG.serviceID,
+                EMAILJS_CONFIG.autoReplyTemplateID,
+                {
+                    to_email: formData.get('email'),
+                    to_name: formData.get('name')
+                }
+            );
+            
+            showSuccessMessage(partnershipForm, '🎉 Candidature envoyée ! Nous reviendrons vers vous très bientôt.');
+            partnershipForm.reset();
         } catch (error) {
             showErrorMessage(partnershipForm, '❌ Erreur lors de l\'envoi. Veuillez réessayer.');
         } finally {
@@ -128,35 +132,36 @@ if (reviewForm) {
         const formData = new FormData(reviewForm);
         const rating = document.querySelector('input[name="rating"]:checked')?.value || '5';
         
-        const data = {
-            nom: formData.get('name'),
-            email: formData.get('email'),
-            produit: formData.get('product'),
-            note: rating,
-            titre: formData.get('title'),
-            commentaire: formData.get('comment'),
-            _subject: `Nouvel avis - ${rating}★ - ${formData.get('name')}`,
-            _replyto: formData.get('email')
+        const templateParams = {
+            from_name: formData.get('name'),
+            from_email: formData.get('email'),
+            product: formData.get('product'),
+            rating: rating,
+            review_title: formData.get('title'),
+            message: formData.get('comment'),
+            form_type: 'Avis'
         };
         
         try {
-            const response = await fetch(FORMSPREE_CONFIG.review, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+            await emailjs.send(
+                EMAILJS_CONFIG.serviceID,
+                EMAILJS_CONFIG.templateID,
+                templateParams
+            );
             
-            if (response.ok) {
-                showSuccessMessage(reviewForm, '⭐ Merci pour votre avis ! Il sera publié après modération.');
-                reviewForm.reset();
-                // Réinitialiser les étoiles
-                const stars = document.querySelectorAll('.star-rating input');
-                stars.forEach(star => star.checked = false);
-            } else {
-                throw new Error('Erreur serveur');
-            }
+            await emailjs.send(
+                EMAILJS_CONFIG.serviceID,
+                EMAILJS_CONFIG.autoReplyTemplateID,
+                {
+                    to_email: formData.get('email'),
+                    to_name: formData.get('name')
+                }
+            );
+            
+            showSuccessMessage(reviewForm, '⭐ Merci pour votre avis ! Il sera publié après modération.');
+            reviewForm.reset();
+            const stars = document.querySelectorAll('.star-rating input');
+            stars.forEach(star => star.checked = false);
         } catch (error) {
             showErrorMessage(reviewForm, '❌ Erreur lors de l\'envoi. Veuillez réessayer.');
         } finally {
@@ -181,27 +186,30 @@ newsletterForms.forEach(form => {
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
         submitBtn.disabled = true;
         
-        const data = {
-            email: emailInput.value,
-            _subject: 'Nouvelle inscription à la newsletter',
-            source: 'Newsletter footer'
+        const templateParams = {
+            from_email: emailInput.value,
+            form_type: 'Newsletter',
+            message: 'Nouvelle inscription à la newsletter'
         };
         
         try {
-            const response = await fetch(FORMSPREE_CONFIG.newsletter, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+            await emailjs.send(
+                EMAILJS_CONFIG.serviceID,
+                EMAILJS_CONFIG.templateID,
+                templateParams
+            );
             
-            if (response.ok) {
-                showSuccessMessage(form, '✅ Inscription réussie !');
-                form.reset();
-            } else {
-                throw new Error('Erreur serveur');
-            }
+            await emailjs.send(
+                EMAILJS_CONFIG.serviceID,
+                EMAILJS_CONFIG.autoReplyTemplateID,
+                {
+                    to_email: emailInput.value,
+                    to_name: 'Membre'
+                }
+            );
+            
+            showSuccessMessage(form, '✅ Inscription réussie !');
+            form.reset();
         } catch (error) {
             showErrorMessage(form, '❌ Erreur. Réessayez.');
         } finally {
