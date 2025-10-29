@@ -25,8 +25,8 @@ class CookieConsent {
             this.applyConsent(finalConsent);
         }
 
-        // Gérer les boutons de paramètres
-        this.setupSettingsButtons();
+        // Bouton flottant désactivé
+        // this.setupSettingsButtons();
     }    showBanner() {
         const banner = document.createElement('div');
         banner.id = 'cookie-consent-banner';
@@ -271,6 +271,7 @@ class CookieConsent {
         document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;domain=.${window.location.hostname}`;
     }
 
+    /* BOUTON FLOTTANT DÉSACTIVÉ
     setupSettingsButtons() {
         // Ajouter un bouton flottant pour rouvrir les paramètres
         const settingsBtn = document.createElement('button');
@@ -282,6 +283,7 @@ class CookieConsent {
         
         document.body.appendChild(settingsBtn);
     }
+    */
 
     showNotification(message) {
         const notification = document.createElement('div');
