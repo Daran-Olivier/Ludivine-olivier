@@ -652,27 +652,27 @@ function downloadProgram(programId) {
     addPoints(25, "Programme téléchargé");
     showConfetti();
   }
-  // Animation confettis gamification
-  function showConfetti() {
-    const confettiContainer = document.getElementById("confetti");
-    if (!confettiContainer) return;
-    confettiContainer.innerHTML = "";
-    confettiContainer.style.display = "block";
-    const colors = ["#FFD700", "#4A90E2", "#9B59B6", "#F39C12", "#2ECC71"];
-    for (let i = 0; i < 24; i++) {
-      const piece = document.createElement("div");
-      piece.className = "confetti-piece";
-      piece.style.background =
-        colors[Math.floor(Math.random() * colors.length)];
-      piece.style.left = Math.random() * 300 - 150 + "px";
-      piece.style.top = Math.random() * 60 + "px";
-      confettiContainer.appendChild(piece);
-    }
-    setTimeout(() => {
-      confettiContainer.style.display = "none";
-      confettiContainer.innerHTML = "";
-    }, 1200);
+}
+
+// Animation confettis gamification
+function showConfetti() {
+  const confettiContainer = document.getElementById("confetti");
+  if (!confettiContainer) return;
+  confettiContainer.innerHTML = "";
+  confettiContainer.style.display = "block";
+  const colors = ["#FFD700", "#4A90E2", "#9B59B6", "#F39C12", "#2ECC71"];
+  for (let i = 0; i < 24; i++) {
+    const piece = document.createElement("div");
+    piece.className = "confetti-piece";
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.left = Math.random() * 300 - 150 + "px";
+    piece.style.top = Math.random() * 60 + "px";
+    confettiContainer.appendChild(piece);
   }
+  setTimeout(() => {
+    confettiContainer.style.display = "none";
+    confettiContainer.innerHTML = "";
+  }, 1200);
 }
 
 function previewProgram(programId) {
@@ -1017,12 +1017,14 @@ function toggleFaq(element) {
 // ========================================
 // Formulaires
 // ========================================
+// NOTE: Les formulaires sont gérés par form-handler.js (EmailJS)
+// Cette fonction est désactivée pour éviter les conflits
 function initForms() {
-  // Formulaire de contact
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", handleContactSubmit);
-  }
+  // Formulaire de contact - DÉSACTIVÉ (géré par form-handler.js)
+  // const contactForm = document.getElementById("contactForm");
+  // if (contactForm) {
+  //   contactForm.addEventListener("submit", handleContactSubmit);
+  // }
 
   // Formulaire de réservation
   const bookingForm = document.getElementById("bookingForm");
@@ -1030,31 +1032,24 @@ function initForms() {
     bookingForm.addEventListener("submit", handleBookingSubmit);
   }
 
-  // Formulaire de partenariat
-  const partnershipForm = document.querySelector(".partnership-form");
-  if (partnershipForm) {
-    partnershipForm.addEventListener("submit", handlePartnershipSubmit);
-  }
+  // Formulaire de partenariat - DÉSACTIVÉ (géré par form-handler.js)
+  // const partnershipForm = document.querySelector(".partnership-form");
+  // if (partnershipForm) {
+  //   partnershipForm.addEventListener("submit", handlePartnershipSubmit);
+  // }
 }
 
-function handleContactSubmit(e) {
-  e.preventDefault();
-
-  // Récupérer les données
-  const formData = new FormData(e.target);
-  const data = Object.fromEntries(formData);
-
-  // Afficher un message de succès
-  showSuccessMessage(
-    "Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais."
-  );
-
-  // Réinitialiser le formulaire
-  e.target.reset();
-
-  // Ajouter des points
-  addPoints(15, "Message envoyé");
-}
+// DÉSACTIVÉ - Géré par form-handler.js avec EmailJS
+// function handleContactSubmit(e) {
+//   e.preventDefault();
+//   const formData = new FormData(e.target);
+//   const data = Object.fromEntries(formData);
+//   showSuccessMessage(
+//     "Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais."
+//   );
+//   e.target.reset();
+//   addPoints(15, "Message envoyé");
+// }
 
 function handleBookingSubmit(e) {
   e.preventDefault();
@@ -1067,21 +1062,16 @@ function handleBookingSubmit(e) {
   nextStep();
 }
 
-function handlePartnershipSubmit(e) {
-  e.preventDefault();
-
-  // Récupérer les données
-  const formData = new FormData(e.target);
-  const data = Object.fromEntries(formData);
-
-  // Afficher un message de succès
-  showSuccessMessage(
-    "Votre candidature a été envoyée avec succès ! Nous vous contacterons sous 48h."
-  );
-
-  // Réinitialiser le formulaire
-  e.target.reset();
-}
+// DÉSACTIVÉ - Géré par form-handler.js avec EmailJS
+// function handlePartnershipSubmit(e) {
+//   e.preventDefault();
+//   const formData = new FormData(e.target);
+//   const data = Object.fromEntries(formData);
+//   showSuccessMessage(
+//     "Votre candidature a été envoyée avec succès ! Nous vous contacterons sous 48h."
+//   );
+//   e.target.reset();
+// }
 
 function showSuccessMessage(message) {
   const notification = document.createElement("div");
