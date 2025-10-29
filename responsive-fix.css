@@ -4,32 +4,32 @@
 
 /* Empêcher le scroll horizontal global */
 html {
-    overflow-x: hidden;
-    max-width: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
-    overflow-x: hidden;
-    max-width: 100%;
-    position: relative;
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
 }
 
 /* Conteneurs principaux */
 * {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .container {
-    max-width: 100%;
-    overflow-x: hidden;
-    padding-left: clamp(1rem, 3vw, 2rem);
-    padding-right: clamp(1rem, 3vw, 2rem);
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-left: clamp(1rem, 3vw, 2rem);
+  padding-right: clamp(1rem, 3vw, 2rem);
 }
 
 /* Images responsives */
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ========================================
@@ -38,145 +38,150 @@ img {
 
 /* Très petits écrans (320px - 480px) */
 @media screen and (max-width: 480px) {
-    /* Navigation */
-    .nav-menu {
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    /* Cartes produits */
-    .product-card,
-    .program-card,
-    .case-block {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding: 1rem !important;
-    }
-    
-    /* Grilles */
-    .products-grid,
-    .programs-grid,
-    .features-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1rem !important;
-        padding: 0 !important;
-    }
-    
-    /* Formulaires */
-    input,
-    textarea,
-    select,
-    button {
-        max-width: 100% !important;
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-    
-    /* Sections */
-    section {
-        padding: 2rem 1rem !important;
-    }
-    
-    /* Hero section */
-    .hero {
-        padding: 3rem 1rem !important;
-    }
-    
-    .hero h1 {
-        font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
-    }
-    
-    /* Footer */
-    .footer-content {
-        flex-direction: column !important;
-        gap: 1.5rem !important;
-    }
-    
-    .footer-section {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-    
-    /* Tableaux */
-    table {
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    /* Titres */
-    h1, h2, h3, h4, h5, h6 {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
-    }
+  /* Navigation */
+  .nav-menu {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Cartes produits */
+  .product-card,
+  .program-card,
+  .case-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 1rem !important;
+  }
+
+  /* Grilles */
+  .products-grid,
+  .programs-grid,
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 0 !important;
+  }
+
+  /* Formulaires */
+  input,
+  textarea,
+  select,
+  button {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* Sections */
+  section {
+    padding: 2rem 1rem !important;
+  }
+
+  /* Hero section */
+  .hero {
+    padding: 3rem 1rem !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  .footer-section {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Tableaux */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Titres */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
 }
 
 /* Petits écrans (481px - 768px) */
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    .container {
-        padding: 0 1.5rem;
-    }
-    
-    .products-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-        gap: 1.5rem !important;
-    }
-    
-    .hero h1 {
-        font-size: clamp(2rem, 5vw, 3rem) !important;
-    }
-    
-    section {
-        padding: 3rem 1.5rem !important;
-    }
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 1.5rem !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem) !important;
+  }
+
+  section {
+    padding: 3rem 1.5rem !important;
+  }
 }
 
 /* Tablettes (769px - 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .container {
-        max-width: 95%;
-        padding: 0 2rem;
-    }
-    
-    .products-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-        gap: 2rem !important;
-    }
+  .container {
+    max-width: 95%;
+    padding: 0 2rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+  }
 }
 
 /* Grands écrans tablettes/petits laptops (1025px - 1280px) */
 @media screen and (min-width: 1025px) and (max-width: 1280px) {
-    .container {
-        max-width: 1200px;
-    }
-    
-    .products-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
+  .container {
+    max-width: 1200px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 }
 
 /* Écrans moyens (1281px - 1440px) */
 @media screen and (min-width: 1281px) and (max-width: 1440px) {
-    .container {
-        max-width: 1280px;
-    }
+  .container {
+    max-width: 1280px;
+  }
 }
 
 /* Grands écrans (1441px - 1920px) */
 @media screen and (min-width: 1441px) and (max-width: 1920px) {
-    .container {
-        max-width: 1400px;
-    }
+  .container {
+    max-width: 1400px;
+  }
 }
 
 /* Très grands écrans (1921px+) */
 @media screen and (min-width: 1921px) {
-    .container {
-        max-width: 1600px;
-    }
+  .container {
+    max-width: 1600px;
+  }
 }
 
 /* ========================================
@@ -185,15 +190,15 @@ img {
 
 /* Mode paysage mobile */
 @media screen and (max-height: 500px) and (orientation: landscape) {
-    .hero {
-        min-height: auto !important;
-        padding: 2rem 1rem !important;
-    }
-    
-    .nav-menu {
-        max-height: 80vh;
-        overflow-y: auto;
-    }
+  .hero {
+    min-height: auto !important;
+    padding: 2rem 1rem !important;
+  }
+
+  .nav-menu {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
 }
 
 /* ========================================
@@ -206,78 +211,78 @@ img {
 .case-block,
 .feature-card,
 .testimonial-card {
-    box-sizing: border-box;
-    max-width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 /* Flexbox fix */
 .flex-container {
-    flex-wrap: wrap;
-    gap: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 /* Grid fix */
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 1rem;
 }
 
 /* Marges négatives fix */
 .row {
-    margin-left: 0;
-    margin-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* Vidéos et iframes responsives */
 iframe,
 video {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Fix pour les formulaires */
 .form-group {
-    width: 100%;
-    max-width: 100%;
+  width: 100%;
+  max-width: 100%;
 }
 
 .newsletter-form {
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .newsletter-form input {
-    flex: 1 1 200px;
-    min-width: 0;
+  flex: 1 1 200px;
+  min-width: 0;
 }
 
 .newsletter-form button {
-    flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 /* Fix pour les cartes qui dépassent */
 @media screen and (max-width: 768px) {
-    .product-card img,
-    .program-card img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-    
-    /* Ajuster les paddings excessifs */
-    .section-padding {
-        padding: 2rem 1rem;
-    }
-    
-    /* Fix pour les titres longs */
-    .product-title,
-    .program-title {
-        font-size: clamp(1.2rem, 4vw, 1.8rem);
-        line-height: 1.3;
-    }
+  .product-card img,
+  .program-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Ajuster les paddings excessifs */
+  .section-padding {
+    padding: 2rem 1rem;
+  }
+
+  /* Fix pour les titres longs */
+  .product-title,
+  .program-title {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    line-height: 1.3;
+  }
 }
 
 /* ========================================
@@ -285,19 +290,19 @@ video {
    ======================================== */
 
 @media (hover: none) and (pointer: coarse) {
-    /* Augmenter les zones de clic */
-    button,
-    a,
-    input[type="submit"] {
-        min-height: 44px;
-        min-width: 44px;
-    }
-    
-    /* Désactiver les effets hover */
-    .product-card:hover,
-    .program-card:hover {
-        transform: none;
-    }
+  /* Augmenter les zones de clic */
+  button,
+  a,
+  input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Désactiver les effets hover */
+  .product-card:hover,
+  .program-card:hover {
+    transform: none;
+  }
 }
 
 /* ========================================
@@ -305,11 +310,11 @@ video {
    ======================================== */
 
 @media print {
-    * {
-        overflow: visible !important;
-    }
-    
-    .no-print {
-        display: none !important;
-    }
+  * {
+    overflow: visible !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
 }
