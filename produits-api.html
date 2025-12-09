@@ -71,6 +71,7 @@
     </footer>
 
     <!-- Module API PureLink -->
+    <script src="assets/js/purelink-api-config.js"></script>
     <script src="assets/js/purelink-products.js"></script>
     <script>
         // Configuration et initialisation
@@ -87,18 +88,18 @@
                 q: searchInput.value.trim() || undefined,
                 onError: (error) => {
                     console.error('Erreur produits:', error);
-                    document.querySelector(productsGrid).innerHTML = 
+                    document.querySelector(productsGrid).innerHTML =
                         '<div class="error-message">Impossible de charger les produits. Vérifiez que le backend est déployé.</div>';
                 }
             };
-            
+
             await PureLinkProducts.renderProducts(productsGrid, options);
         }
 
         // Écouteurs d'événements
         categoryFilter.addEventListener('change', refreshProducts);
         featuredFilter.addEventListener('change', refreshProducts);
-        
+
         // Debounce pour la recherche
         let searchTimeout;
         searchInput.addEventListener('input', () => {
@@ -109,6 +110,8 @@
         // Chargement initial
         document.addEventListener('DOMContentLoaded', refreshProducts);
     </script>
+    <!-- Filtrage dynamique des catégories -->
+    <script src="assets/js/category-filter.js"></script>
     <script src="cookie-consent.js"?v=2.0"></script>
 </body>
 </html>

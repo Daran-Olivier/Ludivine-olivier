@@ -92,7 +92,7 @@ $username = getLoggedInUser();
             </div>
             <form id="product-form" enctype="multipart/form-data">
                 <input type="hidden" id="product-id" name="id">
-                
+
                 <div class="form-row">
                     <div class="form-group">
                         <label for="product-name">Nom du produit *</label>
@@ -189,6 +189,6 @@ $username = getLoggedInUser();
         </div>
     </div>
 
-    <script src="assets/admin.js"></script>
+    <script src="assets/admin.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>

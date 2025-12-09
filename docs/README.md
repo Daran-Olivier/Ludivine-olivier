@@ -28,7 +28,7 @@
 
 ## 🎯 À propos
 
-Site web vitrine moderne et responsive pour **Ludivine & Olivier**, partenaires officiels de **PureLink**. 
+Site web vitrine moderne et responsive pour **Ludivine & Olivier**, partenaires officiels de **PureLink**.
 
 Le site présente une gamme complète de produits de bien-être naturels (nutrition, care, drinks, elixirs) et permet aux visiteurs de :
 - Découvrir les produits PureLink
@@ -85,14 +85,14 @@ Le site présente une gamme complète de produits de bien-être naturels (nutrit
 
 ### Fonctionnalités techniques
 
-✅ **Design responsive** - Mobile, tablette, desktop  
-✅ **Navigation intuitive** - Menu hamburger sur mobile  
-✅ **Formulaires fonctionnels** - Intégration Formspree  
-✅ **Gestion des cookies** - Bannière RGPD complète  
-✅ **Animations modernes** - Transitions fluides  
-✅ **SEO optimisé** - Balises meta, structure sémantique  
-✅ **Performance** - Chargement rapide, images optimisées  
-✅ **Accessibilité** - Navigation clavier, ARIA labels  
+✅ **Design responsive** - Mobile, tablette, desktop
+✅ **Navigation intuitive** - Menu hamburger sur mobile
+✅ **Formulaires fonctionnels** - Intégration Formspree
+✅ **Gestion des cookies** - Bannière RGPD complète
+✅ **Animations modernes** - Transitions fluides
+✅ **SEO optimisé** - Balises meta, structure sémantique
+✅ **Performance** - Chargement rapide, images optimisées
+✅ **Accessibilité** - Navigation clavier, ARIA labels
 
 ---
 
@@ -218,10 +218,10 @@ pureliink-ludivine-olivier/
      ```bash
      # Avec Python
      python -m http.server 8000
-     
+
      # Avec Node.js (http-server)
      npx http-server
-     
+
      # Avec PHP
      php -S localhost:8000
      ```
@@ -339,6 +339,49 @@ Pour suivre les statistiques du site :
 - Cherchez les variables CSS (`:root`)
 - Modifiez les valeurs hexadécimales
 
+### 4. Backend API (optionnel)
+
+Le site peut consommer un backend PHP (dossier `backend-php/`) pour enrichir dynamiquement les produits et les images "hero". L’URL de base de l’API est centralisée dans `assets/js/purelink-api-config.js` via la variable globale `window.PURELINK_API_BASE`.
+
+- Par défaut:
+  - En local (file:, localhost): `location.origin + '/backend-php'`
+  - En production: `https://ludivineolivier.fr/backend-php`
+
+- Pour forcer une autre URL (ex: frontend sur Netlify, backend ailleurs), insérez AVANT les scripts d’intégration:
+
+```html
+<script>
+  window.PURELINK_API_BASE = 'https://votre-backend.com/backend-php';
+</script>
+<script src="assets/js/purelink-api-config.js"></script>
+```
+
+Les scripts qui consomment cette config sont:
+- `assets/js/purelink-api-integration.js` (ajoute des produits API dans `produits.html`)
+- `assets/js/purelink-products.js` (page `produits-api.html`)
+- `assets/js/purelink-hero-api.js` (images hero pour `index.html` et `a-propos.html`)
+
+Fallback images: `window.PURELINK_PLACEHOLDER_URL` est également défini par `purelink-api-config.js` pour garantir un visuel en cas d'échec de chargement.
+
+Sécurité (production):
+- Les scripts de test/diagnostic du backend sont bloqués par `.htaccess` (`diagnostic.php`, `test-direct.php`, `liste-bases.php`, `test-debug.php`, `test-connexion.php`).
+- Recommandé: ne pas déployer ces fichiers sur le serveur final ou les supprimer après validation.
+
+#### Script de nettoyage FTP (optionnel)
+
+Pour supprimer automatiquement ces fichiers côté serveur via FTP/FTPS, un script est fourni:
+
+```
+powershell -ExecutionPolicy Bypass -File .\DEPLOY\cleanup-ftp-remove-diagnostics.ps1 -UseFtps
+```
+
+Le script vous demandera:
+- Host FTP (ex: ftp.votre-domaine.fr)
+- Username / Password FTP
+- RemoteRoot (par défaut: /htdocs) — alternatives fréquentes: /public_html
+
+Astuce: ajoutez `-WhatIf` pour simuler sans supprimer.
+
 ---
 
 ## 📚 Documentation
@@ -375,9 +418,9 @@ Le dossier `conception/` contient toute la documentation UX/UI du projet, des pr
 
 **Objectif :** Définir les grandes zones fonctionnelles de chaque page
 
-📁 **Dossier :** [`conception/zoning/`](./conception/zoning/)  
-📖 **Guide complet :** [zoning/README.md](./conception/zoning/README.md)  
-⏱️ **Durée :** 1-2 jours  
+📁 **Dossier :** [`conception/zoning/`](./conception/zoning/)
+📖 **Guide complet :** [zoning/README.md](./conception/zoning/README.md)
+⏱️ **Durée :** 1-2 jours
 🛠️ **Outils :** Papier, Excalidraw, Figma
 
 **Livrables :**
@@ -389,9 +432,9 @@ Le dossier `conception/` contient toute la documentation UX/UI du projet, des pr
 
 **Objectif :** Structurer le contenu et définir la navigation
 
-📁 **Dossier :** [`conception/wireframes/`](./conception/wireframes/)  
-📖 **Guide complet :** [wireframes/README.md](./conception/wireframes/README.md)  
-⏱️ **Durée :** 3-5 jours  
+📁 **Dossier :** [`conception/wireframes/`](./conception/wireframes/)
+📖 **Guide complet :** [wireframes/README.md](./conception/wireframes/README.md)
+⏱️ **Durée :** 3-5 jours
 🛠️ **Outils :** Figma, Balsamiq, Adobe XD
 
 **Livrables :**
@@ -404,9 +447,9 @@ Le dossier `conception/` contient toute la documentation UX/UI du projet, des pr
 
 **Objectif :** Créer le design visuel final
 
-📁 **Dossier :** [`conception/mockups/`](./conception/mockups/)  
-📖 **Guide complet :** [mockups/README.md](./conception/mockups/README.md)  
-⏱️ **Durée :** 5-10 jours  
+📁 **Dossier :** [`conception/mockups/`](./conception/mockups/)
+📖 **Guide complet :** [mockups/README.md](./conception/mockups/README.md)
+⏱️ **Durée :** 5-10 jours
 🛠️ **Outils :** Figma (recommandé), Adobe XD, Sketch
 
 **Livrables :**
@@ -520,11 +563,11 @@ Une page de test est disponible : `test-formulaires.html`
 
 ### RGPD
 
-✅ **Bannière de cookies** - Consentement obligatoire  
-✅ **Politique de confidentialité** - Page dédiée  
-✅ **Politique de cookies** - Liste complète des cookies  
-✅ **Droit de retrait** - Bouton flottant pour modifier  
-✅ **Données sécurisées** - HTTPS partout  
+✅ **Bannière de cookies** - Consentement obligatoire
+✅ **Politique de confidentialité** - Page dédiée
+✅ **Politique de cookies** - Liste complète des cookies
+✅ **Droit de retrait** - Bouton flottant pour modifier
+✅ **Données sécurisées** - HTTPS partout
 
 ### Cookies utilisés
 
@@ -587,7 +630,7 @@ Une page de test est disponible : `test-formulaires.html`
 
 ## 📞 Contact
 
-**Ludivine & Olivier**  
+**Ludivine & Olivier**
 Partenaires PureLink
 
 - 📧 Email : ludivine.olivier.pureliink@gmail.com
@@ -600,10 +643,10 @@ Partenaires PureLink
 
 ## 👨‍💻 Développement
 
-**Développeur :** [Votre nom]  
-**Date de création :** Octobre 2025  
-**Dernière mise à jour :** 22 octobre 2025  
-**Version :** 1.0.0  
+**Développeur :** [Votre nom]
+**Date de création :** Octobre 2025
+**Dernière mise à jour :** 22 octobre 2025
+**Version :** 1.0.0
 
 ### Technologies stack
 
@@ -612,13 +655,13 @@ Frontend:
   - HTML5
   - CSS3 (Flexbox, Grid, Animations)
   - JavaScript ES6+
-  
+
 Services:
   - Formspree (Formulaires)
   - Netlify (Hébergement)
   - Google Fonts (Typographie)
   - Font Awesome (Icônes)
-  
+
 Conformité:
   - RGPD
   - Cookies avec consentement

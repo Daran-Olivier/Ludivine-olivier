@@ -13,13 +13,19 @@ php_flag log_errors On
     Deny from all
 </FilesMatch>
 
+# Bloquer l'accès aux scripts de test/diagnostic en production
+<FilesMatch "^(diagnostic\.php|test-direct\.php|liste-bases\.php|test-debug\.php|test-connexion\.php)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
 # Empêcher l'accès aux dossiers sensibles
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    
+
     # Bloquer l'accès direct au dossier config
     RewriteRule ^config/ - [F,L]
-    
+
     # Bloquer l'accès au dossier install après installation
     # Décommenter après l'installation initiale :
     # RewriteRule ^install/ - [F,L]
@@ -32,13 +38,13 @@ Options -Indexes
 <IfModule mod_headers.c>
     # Protection XSS
     Header set X-XSS-Protection "1; mode=block"
-    
+
     # Empêcher le MIME sniffing
     Header set X-Content-Type-Options "nosniff"
-    
+
     # Protection contre le clickjacking
     Header set X-Frame-Options "SAMEORIGIN"
-    
+
     # Content Security Policy (à adapter selon vos besoins)
     Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com;"
 </IfModule>

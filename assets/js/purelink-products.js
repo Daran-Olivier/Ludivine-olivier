@@ -1,18 +1,18 @@
-(function(){
-  const API_BASE = '/backend-php/api/products.php';
+(function () {
+  const API_BASE = `${window.PURELINK_API_BASE}/api/products.php`;
 
   async function fetchJSON(url, opts) {
     const res = await fetch(url, opts);
-    if (!res.ok) throw new Error('HTTP ' + res.status);
+    if (!res.ok) throw new Error("HTTP " + res.status);
     const data = await res.json();
-    if (!data.success) throw new Error(data.message || 'Erreur API');
+    if (!data.success) throw new Error(data.message || "Erreur API");
     return data;
   }
 
   async function getProducts(params = {}) {
     const url = new URL(API_BASE, window.location.origin);
-    Object.entries(params).forEach(([k,v]) => {
-      if (v !== undefined && v !== null && v !== '') url.searchParams.set(k, v);
+    Object.entries(params).forEach(([k, v]) => {
+      if (v !== undefined && v !== null && v !== "") url.searchParams.set(k, v);
     });
     const data = await fetchJSON(url.toString());
     return data.products || [];
@@ -20,45 +20,63 @@
 
   async function getProduct(id) {
     const url = new URL(API_BASE, window.location.origin);
-    url.searchParams.set('id', id);
+    url.searchParams.set("id", id);
     const data = await fetchJSON(url.toString());
     return data.product;
   }
 
   function formatPrice(price) {
-    if (price == null) return '';
-    return new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(price);
+    if (price == null) return "";
+    return new Intl.NumberFormat("fr-FR", {
+      style: "currency",
+      currency: "EUR",
+    }).format(price);
   }
 
   function productCardHTML(p) {
-    const img = p.image_url || '/backend-php/assets/placeholder.jpg';
-    const featured = p.is_featured ? '<span class="pl-badge">⭐ En vedette</span>' : '';
+    const img = p.image_url || window.PURELINK_PLACEHOLDER_URL;
+    const featured = p.is_featured
+      ? '<span class="pl-badge">⭐ En vedette</span>'
+      : "";
     return `
       <article class="pl-card">
         <div class="pl-card__media">
-          <img src="${img}" alt="${p.name || ''}" onerror="this.src='/backend-php/assets/placeholder.jpg'"/>
+          <img src="${img}" alt="${p.name || ""}" onerror="this.src='${
+      window.PURELINK_PLACEHOLDER_URL
+    }'"/>
           ${featured}
         </div>
         <div class="pl-card__body">
-          <h3 class="pl-card__title">${p.name || ''}</h3>
-          ${p.category ? `<div class="pl-chip">${p.category}</div>` : ''}
-          ${p.short_description ? `<p class="pl-card__desc">${p.short_description}</p>` : ''}
-          ${p.price != null ? `<div class="pl-card__price">${formatPrice(p.price)}</div>` : ''}
+          <h3 class="pl-card__title">${p.name || ""}</h3>
+          ${p.category ? `<div class="pl-chip">${p.category}</div>` : ""}
+          ${
+            p.short_description
+              ? `<p class="pl-card__desc">${p.short_description}</p>`
+              : ""
+          }
+          ${
+            p.price != null
+              ? `<div class="pl-card__price">${formatPrice(p.price)}</div>`
+              : ""
+          }
         </div>
       </article>
     `;
   }
 
   async function renderProducts(container, options = {}) {
-    const el = typeof container === 'string' ? document.querySelector(container) : container;
+    const el =
+      typeof container === "string"
+        ? document.querySelector(container)
+        : container;
     if (!el) return;
 
     const {
-      category = '',
+      category = "",
       featured = undefined, // 1 pour en vedette
-      q = '',
+      q = "",
       limit = undefined,
-      onError = (e)=>console.error(e)
+      onError = (e) => console.error(e),
     } = options;
 
     try {
@@ -69,23 +87,30 @@
       const products = await getProducts(params);
 
       const filtered = q
-        ? products.filter(p =>
-            (p.name || '').toLowerCase().includes(q.toLowerCase()) ||
-            (p.short_description || '').toLowerCase().includes(q.toLowerCase())
+        ? products.filter(
+            (p) =>
+              (p.name || "").toLowerCase().includes(q.toLowerCase()) ||
+              (p.short_description || "")
+                .toLowerCase()
+                .includes(q.toLowerCase())
           )
         : products;
 
-      const sliced = typeof limit === 'number' ? filtered.slice(0, limit) : filtered;
+      const sliced =
+        typeof limit === "number" ? filtered.slice(0, limit) : filtered;
 
       if (!sliced.length) {
         el.innerHTML = '<p class="pl-empty">Aucun produit trouvé.</p>';
         return;
       }
 
-      el.innerHTML = `<div class="pl-grid">${sliced.map(productCardHTML).join('')}</div>`;
+      el.innerHTML = `<div class="pl-grid">${sliced
+        .map(productCardHTML)
+        .join("")}</div>`;
     } catch (e) {
       onError(e);
-      el.innerHTML = '<p class="pl-error">Une erreur est survenue lors du chargement des produits.</p>';
+      el.innerHTML =
+        '<p class="pl-error">Une erreur est survenue lors du chargement des produits.</p>';
     }
   }
 
@@ -108,11 +133,11 @@
     .pl-loader{text-align:center;color:#4f46e5;font-size:16px;padding:40px 20px}
     .error-message{background:#fef2f2;color:#dc2626;border:1px solid #fecaca;border-radius:8px;padding:16px;text-align:center;margin:20px 0}
   `;
-  
+
   // Injecter le CSS seulement s'il n'existe pas déjà
-  if (!document.getElementById('purelink-products-css')) {
-    const style = document.createElement('style');
-    style.id = 'purelink-products-css';
+  if (!document.getElementById("purelink-products-css")) {
+    const style = document.createElement("style");
+    style.id = "purelink-products-css";
     style.textContent = css;
     document.head.appendChild(style);
   }
